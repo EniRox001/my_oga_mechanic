@@ -15,25 +15,12 @@ class _LoginSignUpState extends State<LoginSignUp> {
     final fullHeight = MediaQuery.of(context).size.height;
     final fullWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        height: fullHeight,
-        width: fullWidth,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [
-              0.3,
-              0.6,
-              0.8,
-            ],
-            colors: [
-              Color(0xFF00060C),
-              Color(0xFF03182B),
-              Color(0xFF00060C),
-            ],
-          ),
-        ),
+      body: BackgroundWidget(
+        gradientStops: const [
+          0.3,
+          0.6,
+          0.8,
+        ],
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

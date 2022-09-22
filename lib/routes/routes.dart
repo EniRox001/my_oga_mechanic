@@ -5,5 +5,8 @@ class Routes {
     GetPage(name: '/login_signup', page: () => const LoginSignUp()),
     GetPage(
         name: '/verify_phone_number', page: () => const VerifyPhoneNumber()),
+    GetPage(
+        name: '/user_registration_one',
+        page: () => const UserRegistrationOne()),
   ];
 }

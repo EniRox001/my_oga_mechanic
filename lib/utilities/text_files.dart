@@ -4,4 +4,10 @@ class LoginSignUpText {
   String buttonText = 'Next';
 }
 
-class VerifyPhoneNumberText {}
+class VerifyPhoneNumberText {
+  String enterCodeSentText = 'Enter code sent to';
+  String phoneNumber = '+2348023232323';
+  String inputFieldHintText = 'Enter OTP';
+  String resendOtpText = 'Resend OTP';
+  String verifyButtonText = 'Verify';
+}
