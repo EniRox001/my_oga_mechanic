@@ -8,5 +8,7 @@ class Routes {
     GetPage(
         name: '/user_registration_one',
         page: () => const UserRegistrationOne()),
+    GetPage(
+        name: '/user_registration_two', page: () => const UserRegistrationTwo())
   ];
 }
