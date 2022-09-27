@@ -7,9 +7,6 @@ class UserRegistrationOne extends StatefulWidget {
   State<UserRegistrationOne> createState() => _UserRegistrationOneState();
 }
 
-final TextEditingController phoneNumberRegistrationController =
-    TextEditingController();
-
 class _UserRegistrationOneState extends State<UserRegistrationOne> {
   @override
   Widget build(BuildContext context) {
@@ -27,8 +24,10 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('User Registration'.toUpperCase(),
-                    style: CustomTextStyle().largeText),
+                Text(
+                  UserRegistrationOneText().userRegistrationTitle.toUpperCase(),
+                  style: CustomTextStyle().largeText,
+                ),
                 CircleAvatar(
                   backgroundColor: teal,
                   radius: 85.sp,
@@ -43,95 +42,52 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                             color: teal,
                           ),
                           Text(
-                            'profile picture'.toTitleCase(),
+                            UserRegistrationOneText()
+                                .profilePictureText
+                                .toTitleCase(),
                           ),
                         ],
                       )),
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'phone number',
-                  controller: phoneNumberRegistrationController,
+                  hintText: UserRegistrationOneText()
+                      .phoneNumberControllerHintText
+                      .toUpperCase(),
+                  controller:
+                      UserRegistrationOneControllers().phoneNumberController,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'email address',
-                  controller: phoneNumberRegistrationController,
+                  hintText: UserRegistrationOneText()
+                      .emailAddressControllerHintText
+                      .toUpperCase(),
+                  controller:
+                      UserRegistrationOneControllers().emailAddressController,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'home address',
-                  controller: phoneNumberRegistrationController,
+                  hintText: UserRegistrationOneText()
+                      .homeAddressControllerHintText
+                      .toUpperCase(),
+                  controller:
+                      UserRegistrationOneControllers().emailAddressController,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'office address',
-                  controller: phoneNumberRegistrationController,
+                  hintText: UserRegistrationOneText()
+                      .officeAddressControllerHintText
+                      .toUpperCase(),
+                  controller:
+                      UserRegistrationOneControllers().officeAddressController,
                 ),
                 SizedBox(
                   height: 200.0.h,
                 ),
-                ElevatedButton(
+                WTextButton(
                   onPressed: () {
                     Get.toNamed('/user_registration_two');
                   },
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.black26),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'next'.toUpperCase(),
-                          style: CustomTextStyle().largeText,
-                        ),
-                        // const Icon(
-                        //   Icons.arrow_forward_ios,
-                        //   color: teal,
-                        // )
-                      ],
-                    ),
-                  ),
+                  text: UserRegistrationOneText().nextButtonText.toUpperCase(),
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class WRegistrationFieldTextField extends StatelessWidget {
-  const WRegistrationFieldTextField({
-    Key? key,
-    required this.hintText,
-    required this.controller,
-  }) : super(key: key);
-
-  final String hintText;
-  final TextEditingController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15.0.sp),
-        ),
-        filled: true,
-        fillColor: Colors.black87,
-        hintText: hintText.toUpperCase(),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15.0.sp),
-          borderSide: BorderSide(
-            width: 3.0.w,
-            color: teal,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15.0.sp),
-          borderSide: BorderSide(
-            width: 3.0.w,
-            color: teal,
           ),
         ),
       ),

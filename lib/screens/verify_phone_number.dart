@@ -41,7 +41,7 @@ class _VerifyPhoneNumberState extends State<VerifyPhoneNumber> {
                 padding: EdgeInsets.all(48.0.sp),
                 child: TextFormField(
                   style: ThemeData.light().textTheme.subtitle2,
-                  controller: phoneNumberController,
+                  controller: VerifyPhoneNumberControllers().otpController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.0),

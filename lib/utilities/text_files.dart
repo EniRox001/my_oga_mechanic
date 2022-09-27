@@ -11,3 +11,24 @@ class VerifyPhoneNumberText {
   String resendOtpText = 'Resend OTP';
   String verifyButtonText = 'Verify';
 }
+
+class UserRegistrationOneText {
+  String userRegistrationTitle = 'user registration';
+  String profilePictureText = 'profile picture';
+  String phoneNumberControllerHintText = 'phone number';
+  String emailAddressControllerHintText = 'email address';
+  String homeAddressControllerHintText = 'home address';
+  String officeAddressControllerHintText = 'office address';
+  String nextButtonText = 'next';
+}
+
+class UserRegistrationTwoText {
+  String userRegistrationTitle = 'user registration';
+  String userRegistrationPageText =
+      'Enter the correct details the matches your drivers license';
+  String firstNameControllerHintText = 'first name';
+  String lastNameControllerHintText = 'last name';
+  String dateOfBirthText = 'date of birth';
+  String dateOfBirthControllerHintText = 'dd-mm-yy';
+  String nextButtonText = 'next';
+}

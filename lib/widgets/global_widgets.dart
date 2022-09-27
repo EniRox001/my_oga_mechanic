@@ -33,3 +33,74 @@ class BackgroundWidget extends StatelessWidget {
     );
   }
 }
+
+class WRegistrationFieldTextField extends StatelessWidget {
+  const WRegistrationFieldTextField({
+    Key? key,
+    required this.hintText,
+    required this.controller,
+  }) : super(key: key);
+
+  final String hintText;
+  final TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15.0.sp),
+        ),
+        filled: true,
+        fillColor: Colors.black87,
+        hintText: hintText.toUpperCase(),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15.0.sp),
+          borderSide: BorderSide(
+            width: 3.0.w,
+            color: teal,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15.0.sp),
+          borderSide: BorderSide(
+            width: 3.0.w,
+            color: teal,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class WTextButton extends StatelessWidget {
+  const WTextButton({
+    Key? key,
+    required this.onPressed,
+    required this.text,
+  }) : super(key: key);
+
+  final Function() onPressed;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(backgroundColor: Colors.black26),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'next'.toUpperCase(),
+              style: CustomTextStyle().largeText,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

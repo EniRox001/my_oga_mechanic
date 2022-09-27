@@ -7,8 +7,6 @@ class LoginSignUp extends StatefulWidget {
   State<LoginSignUp> createState() => _LoginSignUpState();
 }
 
-final phoneNumberController = TextEditingController();
-
 class _LoginSignUpState extends State<LoginSignUp> {
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,7 @@ class _LoginSignUpState extends State<LoginSignUp> {
                 padding: EdgeInsets.all(48.0.sp),
                 child: TextFormField(
                   style: ThemeData.light().textTheme.subtitle2,
-                  controller: phoneNumberController,
+                  controller: LoginSignUpControllers().phoneNumberController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.0),
