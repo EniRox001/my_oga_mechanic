@@ -40,3 +40,9 @@ class DriversLicenseRegistrationText {
   String driversLicenseNumberHintText = 'driver\'s license number';
   String nextButtonText = 'next';
 }
+
+class VehicleRegistrationOneText {
+  String vehicleRegistrationOneTitle = 'vehicle registration';
+  String vehicleRegistrationPageText =
+      'Please, fill in the correct details. This will help us get a suitable technician to do the repairs.';
+}

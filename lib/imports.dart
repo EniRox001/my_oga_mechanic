@@ -11,6 +11,7 @@ export 'screens/vehicle_registration_one.dart';
 //---------------Packages---------------//
 export 'package:get/get.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
+export 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 //---------------Misc---------------//
 export 'routes/routes.dart';

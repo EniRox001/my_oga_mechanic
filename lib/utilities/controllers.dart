@@ -19,3 +19,12 @@ class DriversLicenseRegistrationControllers {
   final TextEditingController driversLicenseController =
       TextEditingController();
 }
+
+class VehicleRegistrationOneControllers {
+  final TextEditingController makeController = TextEditingController();
+  final TextEditingController modelController = TextEditingController();
+  final TextEditingController yearController = TextEditingController();
+  final TextEditingController bodyBuildController = TextEditingController();
+  final TextEditingController colorController = TextEditingController();
+  final TextEditingController plateNumberController = TextEditingController();
+}
