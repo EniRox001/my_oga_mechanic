@@ -14,3 +14,8 @@ class UserRegistrationOneControllers {
   final TextEditingController homeAddressController = TextEditingController();
   final TextEditingController officeAddressController = TextEditingController();
 }
+
+class DriversLicenseRegistrationControllers {
+  final TextEditingController driversLicenseController =
+      TextEditingController();
+}

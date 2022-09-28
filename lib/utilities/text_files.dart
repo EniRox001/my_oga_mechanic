@@ -32,3 +32,11 @@ class UserRegistrationTwoText {
   String dateOfBirthControllerHintText = 'dd-mm-yy';
   String nextButtonText = 'next';
 }
+
+class DriversLicenseRegistrationText {
+  String driversLicenseRegistrationTitle = 'user registration';
+  String driversLicenseRegistrationPageText =
+      'Enter the correct details on your driver\'s liscense to facilitate renewal';
+  String driversLicenseNumberHintText = 'driver\'s license number';
+  String nextButtonText = 'next';
+}
