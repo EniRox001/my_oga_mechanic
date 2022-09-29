@@ -63,15 +63,92 @@ class UserRegistrationTwoControllers extends GetxController {
 }
 
 class DriversLicenseRegistrationControllers {
-  final TextEditingController driversLicenseController =
-      TextEditingController();
+  var driversLicenseController = ''.obs;
+  onDriversLicenseControllerChanged(String value) {
+    driversLicenseController.value = value;
+  }
 }
 
 class VehicleRegistrationOneControllers {
-  final TextEditingController makeController = TextEditingController();
-  final TextEditingController modelController = TextEditingController();
-  final TextEditingController yearController = TextEditingController();
-  final TextEditingController bodyBuildController = TextEditingController();
-  final TextEditingController colorController = TextEditingController();
-  final TextEditingController plateNumberController = TextEditingController();
+  var makeController = '---'.obs;
+  onMakeControllerChange(String value) {
+    makeController.value = value;
+  }
+
+  var modelController = '---'.obs;
+  onModelControllerChange(String value) {
+    modelController.value = value;
+  }
+
+  var yearController = 2000.obs;
+  Future<void> onYearControllerChanged(BuildContext context) async {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Select Year"),
+          content: SizedBox(
+            // Need to use container to add size constraint.
+            width: 300,
+            height: 300,
+            child: YearPicker(
+              firstDate: DateTime(DateTime.now().year - 100, 1),
+              lastDate: DateTime(DateTime.now().year + 100, 1),
+              initialDate: DateTime.now(),
+              // save the selected date to _selectedDate DateTime variable.
+              // It's used to set the previous selected date when
+              // re-showing the dialog.
+              selectedDate: DateTime.now(),
+              onChanged: (DateTime dateTime) {
+                // close the dialog when year is selected.
+                Navigator.pop(context);
+
+                yearController.value = dateTime.year;
+              },
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  var bodyBuildController = ''.obs;
+  onBodyBuildControllerChange(String value) {
+    bodyBuildController.value = value;
+  }
+
+  var pickerColor = const Color(0xff443a49).obs;
+  var currentColor = const Color(0xff443a49).obs;
+  Future<void> onColorControllerChange(BuildContext context) async {
+    showDialog(
+      context: context,
+      builder: (_) {
+        return AlertDialog(
+          title: const Text('Choose Color'),
+          content: ColorPicker(
+            pickerColor: pickerColor.value,
+            onColorChanged: (color) {
+              pickerColor.value = color;
+            },
+          ),
+          actions: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                currentColor = pickerColor;
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Got it',
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  var plateNumberController = '---'.obs;
+  onPlateNumberControllerChange(String value) {
+    plateNumberController.value = value;
+  }
 }

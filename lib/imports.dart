@@ -7,6 +7,7 @@ export 'screens/user_registration_one.dart';
 export 'screens/user_registration_two.dart';
 export 'screens/drivers_license_registration.dart';
 export 'screens/vehicle_registration_one.dart';
+export 'screens/vehicle_registration_two.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';
