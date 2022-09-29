@@ -22,9 +22,9 @@ class Routes {
       name: '/driver_license_registration',
       page: () => const DriversLicenseRegistration(),
     ),
-    GetPage(
-      name: '/vehicle_registration_one',
-      page: () => const VehicleRegistrationOne(),
-    ),
+    // GetPage(
+    //   name: '/vehicle_registration_one',
+    //   page: () => const VehicleRegistrationOne(),
+    // ),
   ];
 }

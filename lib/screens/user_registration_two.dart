@@ -1,36 +1,12 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class UserRegistrationTwo extends StatefulWidget {
+class UserRegistrationTwo extends StatelessWidget {
   const UserRegistrationTwo({super.key});
 
   @override
-  State<UserRegistrationTwo> createState() => _UserRegistrationTwoState();
-}
-
-final firstNameController = TextEditingController();
-final lastNameController = TextEditingController();
-var dobController = TextEditingController();
-
-class _UserRegistrationTwoState extends State<UserRegistrationTwo> {
-  DateTime selectedDate = DateTime.now();
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: selectedDate,
-        firstDate: DateTime(2015, 8),
-        lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate) {
-      String dobText = '${selectedDate.toLocal()}';
-      setState(() {
-        selectedDate = picked;
-        dobController.text = dobText;
-      });
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final UserRegistrationTwoControllers userRegistrationTwoControllers =
+        Get.put(UserRegistrationTwoControllers());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(
@@ -68,13 +44,19 @@ class _UserRegistrationTwoState extends State<UserRegistrationTwo> {
                   hintText: UserRegistrationTwoText()
                       .firstNameControllerHintText
                       .toUpperCase(),
-                  controller: firstNameController,
+                  onChanged: (value) {
+                    userRegistrationTwoControllers.onFirstNameChanged(value);
+                  },
+                  keyboardType: TextInputType.text,
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationTwoText()
                       .lastNameControllerHintText
                       .toUpperCase(),
-                  controller: lastNameController,
+                  onChanged: (value) {
+                    userRegistrationTwoControllers.onLastNameChanged(value);
+                  },
+                  keyboardType: TextInputType.text,
                 ),
                 Text(
                   UserRegistrationTwoText()
@@ -87,34 +69,34 @@ class _UserRegistrationTwoState extends State<UserRegistrationTwo> {
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                TextFormField(
+                GestureDetector(
                   onTap: () {
-                    _selectDate(context);
+                    userRegistrationTwoControllers
+                        .onDateOfBirthChanged(context);
                   },
-                  readOnly: true,
-                  controller: dobController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0.sp),
-                    ),
-                    filled: true,
-                    fillColor: Colors.black87,
-                    hintText: UserRegistrationTwoText()
-                        .dateOfBirthControllerHintText
-                        .toUpperCase(),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0.sp),
-                      borderSide: BorderSide(
-                        width: 3.0.w,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
                         color: teal,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0.sp),
-                      borderSide: BorderSide(
                         width: 3.0.w,
-                        color: teal,
                       ),
+                      borderRadius: BorderRadius.circular(15.0.sp),
+                      color: Colors.black87,
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(16.0.sp),
+                          child: Obx(
+                            () => Text(
+                              userRegistrationTwoControllers
+                                  .dateOfBirthController.string,
+                              style: TextStyle(
+                                  color: Colors.white70, fontSize: 22.0.sp),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
