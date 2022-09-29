@@ -38,16 +38,22 @@ class WRegistrationFieldTextField extends StatelessWidget {
   const WRegistrationFieldTextField({
     Key? key,
     required this.hintText,
-    required this.controller,
+    required this.onChanged,
+    required this.keyboardType,
+    this.inputFormatter = const [],
   }) : super(key: key);
 
   final String hintText;
-  final TextEditingController controller;
+  final Function(String value) onChanged;
+  final TextInputType keyboardType;
+  final List<TextInputFormatter> inputFormatter;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      keyboardType: keyboardType,
+      onChanged: onChanged,
+      inputFormatters: inputFormatter,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.0.sp),

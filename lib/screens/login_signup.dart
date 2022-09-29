@@ -1,18 +1,16 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class LoginSignUp extends StatefulWidget {
+class LoginSignUp extends StatelessWidget {
   const LoginSignUp({super.key});
 
   @override
-  State<LoginSignUp> createState() => _LoginSignUpState();
-}
-
-class _LoginSignUpState extends State<LoginSignUp> {
-  @override
   Widget build(BuildContext context) {
-    final fullHeight = MediaQuery.of(context).size.height;
-    final fullWidth = MediaQuery.of(context).size.width;
+    final LoginSignUpControllers phoneNumberController =
+        Get.put(LoginSignUpControllers());
+    final fullHeight = Get.height;
+    final fullWidth = Get.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: BackgroundWidget(
         gradientStops: const [
           0.3,
@@ -34,17 +32,23 @@ class _LoginSignUpState extends State<LoginSignUp> {
               ),
               Padding(
                 padding: EdgeInsets.all(48.0.sp),
-                child: TextFormField(
-                  style: ThemeData.light().textTheme.subtitle2,
-                  controller: LoginSignUpControllers().phoneNumberController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16.0),
+                child: Obx(
+                  () => TextFormField(
+                    onChanged: (String value) {
+                      phoneNumberController.onPhoneNumberChanged(value);
+                    },
+                    style: ThemeData.light().textTheme.subtitle2,
+                    initialValue:
+                        phoneNumberController.phoneNumberController.value,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: LoginSignUpText().inputFieldHintText,
+                      hintStyle: ThemeData.light().textTheme.subtitle2,
                     ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    hintText: LoginSignUpText().inputFieldHintText,
-                    hintStyle: ThemeData.light().textTheme.subtitle2,
                   ),
                 ),
               ),

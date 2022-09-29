@@ -1,15 +1,12 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class UserRegistrationOne extends StatefulWidget {
+class UserRegistrationOne extends StatelessWidget {
   const UserRegistrationOne({super.key});
 
   @override
-  State<UserRegistrationOne> createState() => _UserRegistrationOneState();
-}
-
-class _UserRegistrationOneState extends State<UserRegistrationOne> {
-  @override
   Widget build(BuildContext context) {
+    final UserRegistrationOneControllers userRegistrationOneControllers =
+        Get.put(UserRegistrationOneControllers());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(
@@ -53,29 +50,41 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                   hintText: UserRegistrationOneText()
                       .phoneNumberControllerHintText
                       .toUpperCase(),
-                  controller:
-                      UserRegistrationOneControllers().phoneNumberController,
+                  onChanged: (value) {
+                    userRegistrationOneControllers.onPhoneNumberChanged(value);
+                  },
+                  keyboardType: TextInputType.number,
+                  inputFormatter: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly
+                  ],
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
                       .emailAddressControllerHintText
                       .toUpperCase(),
-                  controller:
-                      UserRegistrationOneControllers().emailAddressController,
+                  onChanged: (value) {
+                    userRegistrationOneControllers.onEmailAddressChanged(value);
+                  },
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
                       .homeAddressControllerHintText
                       .toUpperCase(),
-                  controller:
-                      UserRegistrationOneControllers().emailAddressController,
+                  onChanged: (value) {
+                    userRegistrationOneControllers.onHomeAddressChanged(value);
+                  },
+                  keyboardType: TextInputType.text,
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
                       .officeAddressControllerHintText
                       .toUpperCase(),
-                  controller:
-                      UserRegistrationOneControllers().officeAddressController,
+                  onChanged: (value) {
+                    userRegistrationOneControllers
+                        .onOfficeAddressChanged(value);
+                  },
+                  keyboardType: TextInputType.text,
                 ),
                 SizedBox(
                   height: 200.0.h,

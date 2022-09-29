@@ -1,17 +1,16 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class VerifyPhoneNumber extends StatefulWidget {
+class VerifyPhoneNumber extends StatelessWidget {
   const VerifyPhoneNumber({super.key});
 
   @override
-  State<VerifyPhoneNumber> createState() => _VerifyPhoneNumberState();
-}
-
-class _VerifyPhoneNumberState extends State<VerifyPhoneNumber> {
-  @override
   Widget build(BuildContext context) {
-    final fullHeight = MediaQuery.of(context).size.height;
-    final fullWidth = MediaQuery.of(context).size.width;
+    final VerifyPhoneNumberControllers verifyPhoneNumberControllers =
+        Get.put(VerifyPhoneNumberControllers());
+    final LoginSignUpControllers phoneNumberController =
+        Get.put(LoginSignUpControllers());
+    final fullHeight = Get.height;
+    final fullWidth = Get.width;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(
@@ -33,15 +32,21 @@ class _VerifyPhoneNumberState extends State<VerifyPhoneNumber> {
                 VerifyPhoneNumberText().enterCodeSentText,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
-              Text(
-                VerifyPhoneNumberText().phoneNumber,
-                style: Theme.of(context).textTheme.headline5,
+              Obx(
+                () => Text(
+                  '${phoneNumberController.phoneNumberController}',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
               ),
               Padding(
                 padding: EdgeInsets.all(48.0.sp),
                 child: TextFormField(
+                  onChanged: (String value) {
+                    verifyPhoneNumberControllers.onOtpChanged(value);
+                  },
+                  initialValue:
+                      verifyPhoneNumberControllers.otpController.value,
                   style: ThemeData.light().textTheme.subtitle2,
-                  controller: VerifyPhoneNumberControllers().otpController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(16.0),
