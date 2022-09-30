@@ -152,3 +152,20 @@ class VehicleRegistrationOneControllers {
     plateNumberController.value = value;
   }
 }
+
+class VehicleRegistrationTwoControllers extends GetxController {
+  var roadWorthinessController = ''.obs;
+  onRoadWorthinessControllerChanged(String value) {
+    roadWorthinessController.value = value;
+  }
+
+  var vehicleLicenseController = ''.obs;
+  onVehicleLicenseController(String value) {
+    roadWorthinessController.value = value;
+  }
+
+  var insuranceLicenseController = ''.obs;
+  onInsuranceLicenseControllerChanged(String value) {
+    insuranceLicenseController.value = value;
+  }
+}

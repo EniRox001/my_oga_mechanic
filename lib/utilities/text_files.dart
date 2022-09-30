@@ -46,3 +46,10 @@ class VehicleRegistrationOneText {
   String vehicleRegistrationPageText =
       'Please, fill in the correct details. This will help us get a suitable technician to do the repairs.';
 }
+
+class VehicleRegistrationTwoText {
+  String vehicleRegistrationTwoTitle = 'vehicle registration';
+  String vehicleRegistrationPageText =
+      'Please, fill in the correct expiring dates of the documents listed below.';
+  String nextButtonText = 'next';
+}

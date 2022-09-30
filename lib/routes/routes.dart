@@ -30,5 +30,9 @@ class Routes {
       name: '/vehicle_registration_two',
       page: () => const VehicleRegistrationTwo(),
     ),
+    GetPage(
+      name: '/dashboard_one',
+      page: () => const DashboardOne(),
+    ),
   ];
 }
