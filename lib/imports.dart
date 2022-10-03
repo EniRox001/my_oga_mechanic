@@ -12,6 +12,7 @@ export 'screens/dashboard_one.dart';
 export 'screens/dashboard_two.dart';
 export 'screens/services_one.dart';
 export 'screens/service_request.dart';
+export 'screens/service_mechanic.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';

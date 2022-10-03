@@ -8,6 +8,34 @@ List carImageList = <String>[
   'assets/car_images/car_img_three.png'
 ];
 
+List mechanicData = <Map>[
+  {
+    'service provider': 'Ogene Auto Shop',
+    'rating': 4.6,
+    'proximity': 0.3,
+  },
+  {
+    'service provider': 'Ogene Auto Shop',
+    'rating': 4.6,
+    'proximity': 0.3,
+  },
+  {
+    'service provider': 'Ogene Auto Shop',
+    'rating': 4.6,
+    'proximity': 0.3,
+  },
+  {
+    'service provider': 'Ogene Auto Shop',
+    'rating': 4.6,
+    'proximity': 0.3,
+  },
+  {
+    'service provider': 'Ogene Auto Shop',
+    'rating': 4.6,
+    'proximity': 0.3,
+  },
+];
+
 class CustomTextStyle {
   final largeText = TextStyle(
     color: teal,

@@ -46,5 +46,9 @@ class Routes {
       name: '/service_request',
       page: () => const ServiceRequest(),
     ),
+    GetPage(
+      name: '/service_mechanic',
+      page: () => const ServiceMechanic(),
+    ),
   ];
 }
