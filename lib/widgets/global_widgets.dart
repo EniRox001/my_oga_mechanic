@@ -110,3 +110,50 @@ class WTextButton extends StatelessWidget {
     );
   }
 }
+
+class WDashboardButton extends StatelessWidget {
+  const WDashboardButton({
+    Key? key,
+    required this.onPressed,
+    required this.icon,
+    required this.text,
+    this.color = Colors.transparent,
+  }) : super(key: key);
+
+  final Function() onPressed;
+  final IconData icon;
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        side: const BorderSide(
+          color: teal,
+        ),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0.sp)),
+        backgroundColor: color,
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(20.0.sp),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(
+              icon,
+              color: teal,
+            ),
+            Text(
+              text.toUpperCase(),
+              style: CustomTextStyle().largeText,
+            ),
+            const SizedBox(),
+          ],
+        ),
+      ),
+    );
+  }
+}

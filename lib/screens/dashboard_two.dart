@@ -39,17 +39,21 @@ class DashboardTwo extends StatelessWidget {
                     ),
                   ],
                 ),
-                Obx(
-                  () => Text(
-                    '${vehicleRegistrationOneControllers.makeController}',
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                ),
-                Obx(
-                  () => Text(
-                    '${vehicleRegistrationOneControllers.modelController}',
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
+                Column(
+                  children: [
+                    Obx(
+                      () => Text(
+                        '${vehicleRegistrationOneControllers.makeController}',
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
+                    ),
+                    Obx(
+                      () => Text(
+                        '${vehicleRegistrationOneControllers.modelController}',
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                    ),
+                  ],
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(
@@ -107,134 +111,76 @@ class DashboardTwo extends StatelessWidget {
                     },
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
                   children: [
-                    Text(
-                      'Next Service',
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Next Service',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        Text(
+                          'Document Expiring',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                      ],
                     ),
-                    Text(
-                      'Document Expiring',
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(10.0.sp),
+                            child: Text(
+                              'Nov 30, 2022',
+                              style: Theme.of(context).textTheme.headline5,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white10,
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(10.0.sp),
+                            child: Text(
+                              'Nov 30, 2022',
+                              style: Theme.of(context).textTheme.headline5,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white10,
-                        borderRadius: BorderRadius.circular(
-                          10.0,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0.sp),
-                        child: Text(
-                          'Nov 30, 2022',
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white10,
-                        borderRadius: BorderRadius.circular(
-                          10.0,
-                        ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(10.0.sp),
-                        child: Text(
-                          'Nov 30, 2022',
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                ElevatedButton(
+                SizedBox(height: 10.0.h),
+                WDashboardButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      side: BorderSide(
-                        color: teal,
-                      ),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0.sp)),
-                      backgroundColor: Colors.transparent),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.sp),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.build,
-                          color: teal,
-                        ),
-                        Text(
-                          'quick fix'.toUpperCase(),
-                          style: CustomTextStyle().largeText,
-                        ),
-                        SizedBox(),
-                      ],
-                    ),
-                  ),
+                  icon: Icons.build,
+                  text: 'quick fix',
                 ),
-                ElevatedButton(
+                SizedBox(height: 10.0.h),
+                WDashboardButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      side: BorderSide(
-                        color: teal,
-                      ),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0.sp)),
-                      backgroundColor: Colors.transparent),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.sp),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.build,
-                          color: teal,
-                        ),
-                        Text(
-                          'quick fix'.toUpperCase(),
-                          style: CustomTextStyle().largeText,
-                        ),
-                        SizedBox(),
-                      ],
-                    ),
-                  ),
+                  icon: Icons.car_crash,
+                  text: 'accident',
+                  color: Colors.redAccent,
                 ),
-                ElevatedButton(
+                SizedBox(height: 10.0.h),
+                WDashboardButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      side: BorderSide(
-                        color: teal,
-                      ),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0.sp)),
-                      backgroundColor: Colors.transparent),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0.sp),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.build,
-                          color: teal,
-                        ),
-                        Text(
-                          'quick fix'.toUpperCase(),
-                          style: CustomTextStyle().largeText,
-                        ),
-                        SizedBox(),
-                      ],
-                    ),
-                  ),
+                  icon: Icons.home_repair_service,
+                  text: 'service request',
                 ),
               ],
             ),
