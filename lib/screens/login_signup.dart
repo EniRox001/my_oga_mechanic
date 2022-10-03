@@ -49,6 +49,7 @@ class LoginSignUp extends StatelessWidget {
                       hintText: LoginSignUpText().inputFieldHintText,
                       hintStyle: ThemeData.light().textTheme.subtitle2,
                     ),
+                    keyboardType: TextInputType.number,
                   ),
                 ),
               ),

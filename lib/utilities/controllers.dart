@@ -54,7 +54,7 @@ class UserRegistrationTwoControllers extends GetxController {
     final DateTime? picked = await showDatePicker(
         context: context,
         initialDate: DateTime.now(),
-        firstDate: DateTime(2015, 8),
+        firstDate: DateTime(1900, 8),
         lastDate: DateTime(2101));
     if (picked != null && picked != DateTime.now()) {
       dateOfBirthController.value = picked.toString();
