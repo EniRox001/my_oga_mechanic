@@ -34,5 +34,9 @@ class Routes {
       name: '/dashboard_one',
       page: () => const DashboardOne(),
     ),
+    GetPage(
+      name: '/dashboard_two',
+      page: () => const DashboardTwo(),
+    ),
   ];
 }

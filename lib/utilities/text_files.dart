@@ -45,11 +45,25 @@ class VehicleRegistrationOneText {
   String vehicleRegistrationOneTitle = 'vehicle registration';
   String vehicleRegistrationPageText =
       'Please, fill in the correct details. This will help us get a suitable technician to do the repairs.';
+  String vehicleRegistrationMakeHintText = 'make';
+  String vehicleRegistrationModelHintText = 'model';
+  String vehicleRegistrationBodyBuildHintText = 'body build';
+  String vehicleRegistrationPlateNumberHintText = 'plate number';
+  String nextButtonText = 'next';
 }
 
 class VehicleRegistrationTwoText {
   String vehicleRegistrationTwoTitle = 'vehicle registration';
   String vehicleRegistrationPageText =
       'Please, fill in the correct expiring dates of the documents listed below.';
+  String vehicleRegistrationRoadWorthinessHintText = 'road worthiness';
+  String vehicleRegistrationVehicleLicenseHintText = 'vehicle license';
+  String vehicleRegistrationInsuranceHintText = 'insurance';
   String nextButtonText = 'next';
+}
+
+class DashboardOneText {
+  String welcome = 'welcome';
+  String swipeViewCars = 'Swipe left/right to view other cars';
+  String swipeUpText = 'Swipe up to use service';
 }

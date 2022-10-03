@@ -9,12 +9,15 @@ export 'screens/drivers_license_registration.dart';
 export 'screens/vehicle_registration_one.dart';
 export 'screens/vehicle_registration_two.dart';
 export 'screens/dashboard_one.dart';
+export 'screens/dashboard_two.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_colorpicker/flutter_colorpicker.dart';
+export 'package:card_swiper/card_swiper.dart';
 export 'package:flutter/services.dart';
+export 'package:swipe/swipe.dart';
 
 //---------------Misc---------------//
 export 'routes/routes.dart';

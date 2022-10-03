@@ -82,7 +82,8 @@ class VehicleRegistrationTwo extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'road worthiness',
+                  hintText: VehicleRegistrationTwoText()
+                      .vehicleRegistrationRoadWorthinessHintText,
                   onChanged: (value) {
                     vehicleRegistrationTwoControllers
                         .onRoadWorthinessControllerChanged(value);
@@ -90,7 +91,8 @@ class VehicleRegistrationTwo extends StatelessWidget {
                   keyboardType: TextInputType.datetime,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'vehicle license',
+                  hintText: VehicleRegistrationTwoText()
+                      .vehicleRegistrationVehicleLicenseHintText,
                   onChanged: (value) {
                     vehicleRegistrationTwoControllers
                         .onVehicleLicenseController(value);
@@ -98,7 +100,8 @@ class VehicleRegistrationTwo extends StatelessWidget {
                   keyboardType: TextInputType.datetime,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'insurance',
+                  hintText: VehicleRegistrationTwoText()
+                      .vehicleRegistrationInsuranceHintText,
                   onChanged: (value) {
                     vehicleRegistrationTwoControllers
                         .onInsuranceLicenseControllerChanged(value);

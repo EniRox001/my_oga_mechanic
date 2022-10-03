@@ -70,12 +70,12 @@ class DriversLicenseRegistrationControllers {
 }
 
 class VehicleRegistrationOneControllers {
-  var makeController = '---'.obs;
+  var makeController = 'Toyota'.obs;
   onMakeControllerChange(String value) {
     makeController.value = value;
   }
 
-  var modelController = '---'.obs;
+  var modelController = 'Camry'.obs;
   onModelControllerChange(String value) {
     modelController.value = value;
   }

@@ -79,7 +79,8 @@ class VehicleRegistrationOne extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'make',
+                  hintText: VehicleRegistrationOneText()
+                      .vehicleRegistrationMakeHintText,
                   onChanged: (value) {
                     vehicleRegistrationOneControllers
                         .onMakeControllerChange(value);
@@ -87,7 +88,8 @@ class VehicleRegistrationOne extends StatelessWidget {
                   keyboardType: TextInputType.text,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'model',
+                  hintText: VehicleRegistrationOneText()
+                      .vehicleRegistrationModelHintText,
                   onChanged: (value) {
                     vehicleRegistrationOneControllers
                         .onModelControllerChange(value);
@@ -126,7 +128,8 @@ class VehicleRegistrationOne extends StatelessWidget {
                   ),
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'body build',
+                  hintText: VehicleRegistrationOneText()
+                      .vehicleRegistrationBodyBuildHintText,
                   onChanged: (value) {
                     vehicleRegistrationOneControllers
                         .onBodyBuildControllerChange(value);
@@ -134,7 +137,7 @@ class VehicleRegistrationOne extends StatelessWidget {
                   keyboardType: TextInputType.text,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: 'plate number',
+                  hintText: VehicleRegistrationOneText().nextButtonText,
                   onChanged: (value) {
                     vehicleRegistrationOneControllers
                         .onPlateNumberControllerChange(value);
@@ -179,7 +182,7 @@ class VehicleRegistrationOne extends StatelessWidget {
                   onPressed: () {
                     Get.toNamed('/vehicle_registration_two');
                   },
-                  text: 'Next',
+                  text: VehicleRegistrationOneText().nextButtonText,
                 )
               ],
             ),
