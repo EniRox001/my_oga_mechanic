@@ -178,7 +178,9 @@ class DashboardTwo extends StatelessWidget {
                 ),
                 SizedBox(height: 10.0.h),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/services_one');
+                  },
                   icon: Icons.home_repair_service,
                   text: 'service request',
                 ),

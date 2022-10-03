@@ -10,6 +10,8 @@ export 'screens/vehicle_registration_one.dart';
 export 'screens/vehicle_registration_two.dart';
 export 'screens/dashboard_one.dart';
 export 'screens/dashboard_two.dart';
+export 'screens/services_one.dart';
+export 'screens/service_request.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';

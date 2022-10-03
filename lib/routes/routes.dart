@@ -38,5 +38,13 @@ class Routes {
       name: '/dashboard_two',
       page: () => const DashboardTwo(),
     ),
+    GetPage(
+      name: '/services_one',
+      page: () => const ServicesOne(),
+    ),
+    GetPage(
+      name: '/service_request',
+      page: () => const ServiceRequest(),
+    ),
   ];
 }
