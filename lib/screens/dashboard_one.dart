@@ -35,18 +35,6 @@ class DashboardOne extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-                  Obx(
-                    () => Text(
-                      '${vehicleRegistrationOneControllers.makeController}',
-                      style: Theme.of(context).textTheme.headline3,
-                    ),
-                  ),
-                  Obx(
-                    () => Text(
-                      '${vehicleRegistrationOneControllers.modelController}',
-                      style: Theme.of(context).textTheme.headline6,
-                    ),
-                  ),
                   SizedBox(
                     height: 50.0.h,
                   ),

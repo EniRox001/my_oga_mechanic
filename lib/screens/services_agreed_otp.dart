@@ -17,7 +17,7 @@ class ServicesAgreedOtp extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(32.0.sp),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
@@ -35,8 +35,29 @@ class ServicesAgreedOtp extends StatelessWidget {
                 const WCarDetailsWidget(),
                 Image.asset(
                   'assets/car_images/car_img_one.png',
-                  height: Get.height / 4,
+                  height: Get.height / 5,
                   fit: BoxFit.contain,
+                ),
+                Text(
+                  'Please, enter aceptance code sent to: 08022334455',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                PinCodeTextField(
+                  appContext: context,
+                  length: 5,
+                  onChanged: (value) {
+                    paymentAcceptanceOtp.onPaymentAcceptanceOtp(value);
+                  },
+                  keyboardType: TextInputType.number,
+                ),
+                SizedBox(
+                  height: 150.0.h,
+                ),
+                WTextButton(
+                  onPressed: () {
+                    Get.toNamed('/services_repair_completed');
+                  },
+                  text: 'Submit',
                 ),
               ],
             ),

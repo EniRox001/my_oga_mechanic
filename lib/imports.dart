@@ -17,6 +17,7 @@ export 'screens/services_arrived.dart';
 export 'screens/services_repair_nature.dart';
 export 'screens/services_agree_amount.dart';
 export 'screens/services_agreed_otp.dart';
+export 'screens/services_repair_completed.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';

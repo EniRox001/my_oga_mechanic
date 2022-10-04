@@ -192,3 +192,10 @@ class AgreedPriceController extends GetxController {
     }
   }
 }
+
+class PaymentAcceptanceOtp extends GetxController {
+  var paymentAcceptanceOtp = ''.obs;
+  onPaymentAcceptanceOtp(String value) {
+    paymentAcceptanceOtp.value = value;
+  }
+}

@@ -66,5 +66,9 @@ class Routes {
       name: '/services_agreed_otp',
       page: () => const ServicesAgreedOtp(),
     ),
+    GetPage(
+      name: '/services_repair_completed',
+      page: () => const ServicesRepairCompleted(),
+    ),
   ];
 }

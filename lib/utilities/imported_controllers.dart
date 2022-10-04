@@ -20,3 +20,5 @@ final OtpArrivedController otpArrivedController =
     Get.put(OtpArrivedController());
 final AgreedPriceController agreedPriceController =
     Get.put(AgreedPriceController());
+final PaymentAcceptanceOtp paymentAcceptanceOtp =
+    Get.put(PaymentAcceptanceOtp());
