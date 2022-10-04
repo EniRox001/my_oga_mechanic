@@ -13,6 +13,7 @@ export 'screens/dashboard_two.dart';
 export 'screens/services_one.dart';
 export 'screens/service_request.dart';
 export 'screens/service_mechanic.dart';
+export 'screens/services_arrived.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';

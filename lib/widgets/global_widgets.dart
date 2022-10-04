@@ -157,3 +157,66 @@ class WDashboardButton extends StatelessWidget {
     );
   }
 }
+
+class WExpWidget extends StatelessWidget {
+  const WExpWidget({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: teal,
+        borderRadius: BorderRadius.circular(
+          50.0.sp,
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(8.0.sp),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18.0.sp,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class WMechanicData extends StatelessWidget {
+  const WMechanicData({
+    Key? key,
+    required this.title,
+    required this.text,
+  }) : super(key: key);
+
+  final String title;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.black38, borderRadius: BorderRadius.circular(10.0.sp)),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 32.0.sp),
+        child: ListTile(
+          title: Text(
+            title,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          trailing: Text(
+            text,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ),
+      ),
+    );
+  }
+}
