@@ -58,5 +58,9 @@ class Routes {
       name: '/services_repair_nature',
       page: () => const ServiceRepairNature(),
     ),
+    GetPage(
+      name: '/services_agree_amount',
+      page: () => const ServicesAgreeAmount(),
+    ),
   ];
 }
