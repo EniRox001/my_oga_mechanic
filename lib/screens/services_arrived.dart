@@ -5,7 +5,7 @@ class ServicesArrived extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    OtpArrived otpArrived = Get.put(OtpArrived());
+    OtpArrivedController otpArrived = Get.put(OtpArrivedController());
     return Scaffold(
       body: BackgroundWidget(
         gradientStops: const [

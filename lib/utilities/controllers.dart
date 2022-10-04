@@ -170,9 +170,25 @@ class VehicleRegistrationTwoControllers extends GetxController {
   }
 }
 
-class OtpArrived extends GetxController {
+class OtpArrivedController extends GetxController {
   var otpArrived = ''.obs;
   onOtpArrivedChanged(String value) {
     otpArrived.value = value;
+  }
+}
+
+class AgreedPriceController extends GetxController {
+  var agreedPrice = ''.obs;
+  onAgreedPriceChange(String value) {
+    agreedPrice.value = value;
+  }
+
+  var agreedPay = false.obs;
+  onAgreePay() {
+    if (agreedPay.value == true) {
+      agreedPay.value = false;
+    } else {
+      agreedPay.value = true;
+    }
   }
 }

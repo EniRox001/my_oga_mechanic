@@ -62,5 +62,9 @@ class Routes {
       name: '/services_agree_amount',
       page: () => const ServicesAgreeAmount(),
     ),
+    GetPage(
+      name: '/services_agreed_otp',
+      page: () => const ServicesAgreedOtp(),
+    ),
   ];
 }

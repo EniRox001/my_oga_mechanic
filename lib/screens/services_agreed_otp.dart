@@ -1,14 +1,12 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class ServicesAgreeAmount extends StatelessWidget {
-  const ServicesAgreeAmount({super.key});
+class ServicesAgreedOtp extends StatelessWidget {
+  const ServicesAgreedOtp({super.key});
 
   @override
   Widget build(BuildContext context) {
     VehicleRegistrationOneControllers vehicleRegistrationOneControllers =
         Get.put(VehicleRegistrationOneControllers());
-    AgreedPriceController agreedPriceController =
-        Get.put(AgreedPriceController());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(
@@ -101,44 +99,6 @@ class ServicesAgreeAmount extends StatelessWidget {
                   'assets/car_images/car_img_one.png',
                   height: Get.height / 4,
                   fit: BoxFit.contain,
-                ),
-                Text(
-                  'Please, enter the repair cost agreed upon',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-                WRegistrationFieldTextField(
-                  hintText: 'Amount',
-                  onChanged: (value) {
-                    agreedPriceController.onAgreedPriceChange(value);
-                  },
-                  keyboardType: TextInputType.number,
-                ),
-                Obx(
-                  () => Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Checkbox(
-                        shape: const StadiumBorder(),
-                        fillColor: MaterialStateProperty.all(teal),
-                        value: agreedPriceController.agreedPay.value,
-                        onChanged: (value) {
-                          agreedPriceController.onAgreePay();
-                        },
-                      ),
-                      const Text(
-                        'I accept the above charges',
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 100.0.h,
-                ),
-                WTextButton(
-                  onPressed: () {
-                    Get.toNamed('/services_agreed_otp');
-                  },
-                  text: 'Next',
                 ),
               ],
             ),
