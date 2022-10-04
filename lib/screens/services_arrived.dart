@@ -17,8 +17,20 @@ class ServicesArrived extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(32.0.sp),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                      ),
+                    ),
+                  ],
+                ),
                 Text(
                   'you have arrived!'.toUpperCase(),
                   style: CustomTextStyle().largeText,
