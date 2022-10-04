@@ -101,7 +101,7 @@ class WTextButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'next'.toUpperCase(),
+              text.toUpperCase(),
               style: CustomTextStyle().largeText,
             ),
           ],
@@ -296,6 +296,21 @@ class WCarDetailsWidget extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class WSelectedCarWidget extends StatelessWidget {
+  const WSelectedCarWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset(
+      'assets/car_images/car_img_one.png',
+      height: Get.height / 5,
+      fit: BoxFit.contain,
     );
   }
 }

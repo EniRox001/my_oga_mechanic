@@ -33,11 +33,7 @@ class ServicesAgreedOtp extends StatelessWidget {
                 ),
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
-                Image.asset(
-                  'assets/car_images/car_img_one.png',
-                  height: Get.height / 5,
-                  fit: BoxFit.contain,
-                ),
+                const WSelectedCarWidget(),
                 Text(
                   'Please, enter aceptance code sent to: 08022334455',
                   style: Theme.of(context).textTheme.bodyLarge,

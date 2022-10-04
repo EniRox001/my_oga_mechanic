@@ -30,6 +30,20 @@ class ServicesRepairCompleted extends StatelessWidget {
                     ),
                   ],
                 ),
+                const WCarNameWidget(),
+                const WCarDetailsWidget(),
+                const WSelectedCarWidget(),
+                Text(
+                  'Please, be patient while your car is being attended to',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                SizedBox(
+                  height: 150.0.h,
+                ),
+                WTextButton(
+                  onPressed: () {},
+                  text: 'repair completed',
+                ),
               ],
             ),
           ),
