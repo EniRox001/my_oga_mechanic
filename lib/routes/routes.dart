@@ -54,5 +54,9 @@ class Routes {
       name: '/services_arrived',
       page: () => const ServicesArrived(),
     ),
+    GetPage(
+      name: '/services_repair_nature',
+      page: () => const ServiceRepairNature(),
+    ),
   ];
 }

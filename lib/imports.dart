@@ -14,6 +14,7 @@ export 'screens/services_one.dart';
 export 'screens/service_request.dart';
 export 'screens/service_mechanic.dart';
 export 'screens/services_arrived.dart';
+export 'screens/services_repair_nature.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';
@@ -22,6 +23,7 @@ export 'package:flutter_colorpicker/flutter_colorpicker.dart';
 export 'package:card_swiper/card_swiper.dart';
 export 'package:flutter/services.dart';
 export 'package:swipe/swipe.dart';
+export 'package:pin_code_fields/pin_code_fields.dart';
 
 //---------------Misc---------------//
 export 'routes/routes.dart';

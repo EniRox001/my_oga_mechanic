@@ -169,3 +169,10 @@ class VehicleRegistrationTwoControllers extends GetxController {
     insuranceLicenseController.value = value;
   }
 }
+
+class OtpArrived extends GetxController {
+  var otpArrived = ''.obs;
+  onOtpArrivedChanged(String value) {
+    otpArrived.value = value;
+  }
+}
