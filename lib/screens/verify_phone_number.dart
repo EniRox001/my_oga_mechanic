@@ -5,10 +5,6 @@ class VerifyPhoneNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final VerifyPhoneNumberControllers verifyPhoneNumberControllers =
-        Get.put(VerifyPhoneNumberControllers());
-    final LoginSignUpControllers phoneNumberController =
-        Get.put(LoginSignUpControllers());
     final fullHeight = Get.height;
     final fullWidth = Get.width;
     return Scaffold(

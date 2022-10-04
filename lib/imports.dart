@@ -35,6 +35,7 @@ export 'package:my_oga_mechanic/utilities/text_files.dart';
 export 'package:my_oga_mechanic/widgets/global_widgets.dart';
 export 'package:my_oga_mechanic/utilities/image_paths.dart';
 export 'package:my_oga_mechanic/utilities/controllers.dart';
+export 'utilities/imported_controllers.dart';
 
 //---------------Models---------------//
 

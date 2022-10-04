@@ -5,9 +5,6 @@ class DriversLicenseRegistration extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DriversLicenseRegistrationControllers
-        driversLicenseRegistrationControllers =
-        Get.put(DriversLicenseRegistrationControllers());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(

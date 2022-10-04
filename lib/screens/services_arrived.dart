@@ -5,7 +5,6 @@ class ServicesArrived extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    OtpArrivedController otpArrived = Get.put(OtpArrivedController());
     return Scaffold(
       body: BackgroundWidget(
         gradientStops: const [
@@ -44,7 +43,7 @@ class ServicesArrived extends StatelessWidget {
                   appContext: context,
                   length: 5,
                   onChanged: (value) {
-                    otpArrived.onOtpArrivedChanged(value);
+                    otpArrivedController.onOtpArrivedChanged(value);
                   },
                   keyboardType: TextInputType.number,
                 ),

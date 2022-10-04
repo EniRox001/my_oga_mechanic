@@ -5,10 +5,6 @@ class DashboardOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UserRegistrationTwoControllers userRegistrationTwoControllers =
-        Get.put(UserRegistrationTwoControllers());
-    VehicleRegistrationOneControllers vehicleRegistrationOneControllers =
-        Get.put(VehicleRegistrationOneControllers());
     return Swipe(
       onSwipeUp: () {
         Get.toNamed('/dashboard_two');
@@ -39,9 +35,6 @@ class DashboardOne extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-                  SizedBox(
-                    height: 50.0.h,
-                  ),
                   Obx(
                     () => Text(
                       '${vehicleRegistrationOneControllers.makeController}',
@@ -54,6 +47,10 @@ class DashboardOne extends StatelessWidget {
                       style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
+                  SizedBox(
+                    height: 50.0.h,
+                  ),
+                  const WCarNameWidget(),
                   Expanded(
                     child: Swiper(
                       itemCount: carImageList.length,

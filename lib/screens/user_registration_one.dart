@@ -5,8 +5,6 @@ class UserRegistrationOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final UserRegistrationOneControllers userRegistrationOneControllers =
-        Get.put(UserRegistrationOneControllers());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(

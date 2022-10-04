@@ -5,8 +5,6 @@ class VehicleRegistrationOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VehicleRegistrationOneControllers vehicleRegistrationOneControllers =
-        Get.put(VehicleRegistrationOneControllers());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(

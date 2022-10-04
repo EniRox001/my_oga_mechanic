@@ -5,8 +5,6 @@ class LoginSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final LoginSignUpControllers phoneNumberController =
-        Get.put(LoginSignUpControllers());
     final fullHeight = Get.height;
     final fullWidth = Get.width;
     return Scaffold(

@@ -5,10 +5,6 @@ class ServicesAgreeAmount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VehicleRegistrationOneControllers vehicleRegistrationOneControllers =
-        Get.put(VehicleRegistrationOneControllers());
-    AgreedPriceController agreedPriceController =
-        Get.put(AgreedPriceController());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: BackgroundWidget(
@@ -35,68 +31,8 @@ class ServicesAgreeAmount extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(
-                  children: [
-                    Obx(
-                      () => Text(
-                        '${vehicleRegistrationOneControllers.makeController}',
-                        style: Theme.of(context).textTheme.headline3,
-                      ),
-                    ),
-                    Obx(
-                      () => Text(
-                        '${vehicleRegistrationOneControllers.modelController}',
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    vertical: 30.0.h,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      20.0.sp,
-                    ),
-                    border: Border.all(
-                      color: teal,
-                      width: 2.0.w,
-                    ),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10.0.sp),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        //Make
-                        Obx(
-                          () => Text(
-                            vehicleRegistrationOneControllers
-                                .makeController.value,
-                            style: CustomTextStyle().largeText,
-                          ),
-                        ),
-                        //Model
-                        Obx(
-                          () => Text(
-                            vehicleRegistrationOneControllers
-                                .modelController.value,
-                            style: CustomTextStyle().largeText,
-                          ),
-                        ),
-                        //Body Build
-                        Obx(
-                          () => Text(
-                            vehicleRegistrationOneControllers
-                                .plateNumberController.value,
-                            style: CustomTextStyle().largeText,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                const WCarNameWidget(),
+                const WCarDetailsWidget(),
                 Image.asset(
                   'assets/car_images/car_img_one.png',
                   height: Get.height / 4,
