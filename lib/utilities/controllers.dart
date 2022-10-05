@@ -199,3 +199,25 @@ class PaymentAcceptanceOtp extends GetxController {
     paymentAcceptanceOtp.value = value;
   }
 }
+
+class RateMechanicControllers extends GetxController {
+  var communicationController = ''.obs;
+  var knowledgeOfIssueController = ''.obs;
+  var pricingController = ''.obs;
+  var mechanicReviewController = ''.obs;
+  onCommunicationControllerChanged(String value) {
+    communicationController.value = value;
+  }
+
+  onKnowledgeOfIssueControllerChanged(String value) {
+    knowledgeOfIssueController.value = value;
+  }
+
+  onPricingChanged(String value) {
+    pricingController.value = value;
+  }
+
+  onMechanicReviewChanged(String value) {
+    mechanicReviewController.value = value;
+  }
+}

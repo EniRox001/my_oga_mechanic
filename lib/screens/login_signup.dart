@@ -61,6 +61,21 @@ class LoginSignUp extends StatelessWidget {
                 ),
                 onPressed: () {
                   Get.toNamed('/verify_phone_number');
+                  userCollection.insert(
+                    User(
+                      0,
+                      '',
+                      'profilePicture',
+                      'emailAddress',
+                      'homeAddress',
+                      'officeAddress',
+                      'firstName',
+                      'lastName',
+                      'dateOfBirth',
+                      'driversLicense',
+                      {},
+                    ).toMap(),
+                  );
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(

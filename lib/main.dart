@@ -1,6 +1,8 @@
 import 'imports.dart';
+export 'package:mongo_dart/mongo_dart.dart';
 
-void main() {
+void main() async {
+  await connectDB();
   runApp(
     const MyOgaApp(),
   );
@@ -19,7 +21,7 @@ class MyOgaApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData.dark(),
           title: 'My Oga App',
-          initialRoute: '/dashboard_one',
+          initialRoute: '/login_signup',
           getPages: Routes().getPage,
         );
       },

@@ -70,5 +70,13 @@ class Routes {
       name: '/services_repair_completed',
       page: () => const ServicesRepairCompleted(),
     ),
+    GetPage(
+      name: '/services_rate_mechanic',
+      page: () => const ServicesRateMechanic(),
+    ),
+    GetPage(
+      name: '/accident_services_selection',
+      page: () => const AccidentServiceSelection(),
+    ),
   ];
 }

@@ -314,3 +314,40 @@ class WSelectedCarWidget extends StatelessWidget {
     );
   }
 }
+
+class WRateMechanicWidget extends StatelessWidget {
+  const WRateMechanicWidget({
+    Key? key,
+    required this.title,
+    required this.onChanged,
+  }) : super(key: key);
+
+  final String title;
+  final Function(String value) onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.black26,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          SizedBox(
+            width: 80.0.w,
+            child: WRegistrationFieldTextField(
+              hintText: '',
+              onChanged: onChanged,
+              keyboardType: TextInputType.number,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

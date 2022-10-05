@@ -22,3 +22,5 @@ final AgreedPriceController agreedPriceController =
     Get.put(AgreedPriceController());
 final PaymentAcceptanceOtp paymentAcceptanceOtp =
     Get.put(PaymentAcceptanceOtp());
+final RateMechanicControllers rateMechanicControllers =
+    Get.put(RateMechanicControllers());

@@ -109,7 +109,9 @@ class DashboardTwo extends StatelessWidget {
                 ),
                 SizedBox(height: 10.0.h),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/accident_services_selection');
+                  },
                   icon: Icons.car_crash,
                   text: 'accident',
                   color: Colors.redAccent,

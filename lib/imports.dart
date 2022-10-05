@@ -18,6 +18,8 @@ export 'screens/services_repair_nature.dart';
 export 'screens/services_agree_amount.dart';
 export 'screens/services_agreed_otp.dart';
 export 'screens/services_repair_completed.dart';
+export 'screens/services_rate_mechanic.dart';
+export 'screens/accident_service_selection.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';
@@ -27,6 +29,9 @@ export 'package:card_swiper/card_swiper.dart';
 export 'package:flutter/services.dart';
 export 'package:swipe/swipe.dart';
 export 'package:pin_code_fields/pin_code_fields.dart';
+export 'dart:convert';
+export 'package:mongo_dart/mongo_dart.dart'
+    hide Accumulator, State, Size, Builder, Switch;
 
 //---------------Misc---------------//
 export 'routes/routes.dart';
@@ -37,7 +42,9 @@ export 'package:my_oga_mechanic/widgets/global_widgets.dart';
 export 'package:my_oga_mechanic/utilities/image_paths.dart';
 export 'package:my_oga_mechanic/utilities/controllers.dart';
 export 'utilities/imported_controllers.dart';
+export 'database/database_functions.dart';
 
 //---------------Models---------------//
+export 'models/user_model.dart';
 
 //---------------Providers---------------//

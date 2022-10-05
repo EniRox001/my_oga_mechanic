@@ -43,6 +43,8 @@ dependencies:
   card_swiper: ^2.0.4
   swipe: ^0.0.1
   pin_code_fields: ^7.4.0
+  appwrite: ^8.1.0
+  mongo_dart: ^0.7.4+1
 
 dev_dependencies:
   flutter_test:
