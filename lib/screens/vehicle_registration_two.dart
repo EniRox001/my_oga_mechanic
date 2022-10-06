@@ -109,7 +109,7 @@ class VehicleRegistrationTwo extends StatelessWidget {
                 ),
                 WTextButton(
                   onPressed: () {
-                    Get.toNamed('/dashboard_one');
+                    Get.toNamed('/dashboard_two');
                   },
                   text: VehicleRegistrationTwoText().nextButtonText,
                 ),

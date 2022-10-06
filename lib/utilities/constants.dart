@@ -41,4 +41,8 @@ class CustomTextStyle {
     color: teal,
     fontSize: 24.0.sp,
   );
+  final mediumText = TextStyle(
+    color: teal,
+    fontSize: 16.0.sp,
+  );
 }

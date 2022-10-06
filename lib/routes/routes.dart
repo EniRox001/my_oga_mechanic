@@ -126,5 +126,13 @@ class Routes {
       name: '/menu_screen',
       page: () => const MenuScreen(),
     ),
+    GetPage(
+      name: '/menu_add_edit_vehicles',
+      page: () => const MenuAddEditVehicles(),
+    ),
+    GetPage(
+      name: '/menu_vehicle_profile',
+      page: () => const MenuVehicleProfile(),
+    ),
   ];
 }

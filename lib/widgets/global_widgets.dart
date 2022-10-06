@@ -239,7 +239,7 @@ class WCarNameWidget extends StatelessWidget {
         Obx(
           () => Text(
             '${vehicleRegistrationOneControllers.makeController}',
-            style: Theme.of(context).textTheme.headline3,
+            style: Theme.of(context).textTheme.headline4,
           ),
         ),
         Obx(
@@ -314,7 +314,7 @@ class WSelectedCarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      'assets/car_images/car_img_one.png',
+      'assets/car_images/car_img_two.png',
       height: Get.height / 5,
       fit: BoxFit.contain,
     );
@@ -353,6 +353,59 @@ class WRateMechanicWidget extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class WCarDetailsSmallWidget extends StatelessWidget {
+  const WCarDetailsSmallWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(
+        vertical: 30.0.h,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          20.0.sp,
+        ),
+        border: Border.all(
+          color: teal,
+          width: 2.0.w,
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(10.0.sp),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            //Make
+            Obx(
+              () => Text(
+                vehicleRegistrationOneControllers.makeController.value,
+                style: CustomTextStyle().mediumText,
+              ),
+            ),
+            //Model
+            Obx(
+              () => Text(
+                vehicleRegistrationOneControllers.modelController.value,
+                style: CustomTextStyle().mediumText,
+              ),
+            ),
+            //Body Build
+            Obx(
+              () => Text(
+                vehicleRegistrationOneControllers.plateNumberController.value,
+                style: CustomTextStyle().mediumText,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

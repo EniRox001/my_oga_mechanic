@@ -45,7 +45,9 @@ class MenuScreen extends StatelessWidget {
                 Column(
                   children: [
                     WTextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/menu_add_edit_vehicles');
+                      },
                       text: 'add/edit vehicle details',
                     ),
                     SizedBox(
