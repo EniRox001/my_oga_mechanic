@@ -1,7 +1,7 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class AccidentServiceSelection extends StatelessWidget {
-  const AccidentServiceSelection({super.key});
+class AccidentAmbulanceTimer extends StatelessWidget {
+  const AccidentAmbulanceTimer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,21 +34,35 @@ class AccidentServiceSelection extends StatelessWidget {
                 ),
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
-                const WSelectedCarWidget(),
+                Image.asset(
+                  'assets/car_images/ambulance.png',
+                  height: Get.height / 4,
+                ),
                 Text(
-                  'What do you need',
+                  'Medical assitance is on it\'s way. Keep calm while we get to you.',
                   style: CustomTextStyle().largeText,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'Estimated Wait Time'.toUpperCase(),
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+                TimerCountdown(
+                  format: CountDownTimerFormat.minutesSeconds,
+                  endTime: DateTime.now().add(
+                    Duration(
+                      seconds: 5,
+                    ),
+                  ),
+                  onEnd: () {
+                    print('Show something');
+                  },
                 ),
                 WTextButton(
                   onPressed: () {
-                    Get.toNamed('/accident_ambulance_selection');
+                    Get.toNamed('/accident_ambulance_option');
                   },
-                  text: 'medical assistance',
-                  color: Colors.red,
-                ),
-                WTextButton(
-                  onPressed: () {},
-                  text: 'vehicle repair',
+                  text: 'next',
                 ),
               ],
             ),

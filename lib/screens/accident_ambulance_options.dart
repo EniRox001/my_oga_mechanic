@@ -1,7 +1,7 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class AccidentServiceSelectionMedical extends StatelessWidget {
-  const AccidentServiceSelectionMedical({super.key});
+class AccidentAmbulanceOptions extends StatelessWidget {
+  const AccidentAmbulanceOptions({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class AccidentServiceSelectionMedical extends StatelessWidget {
               32.0.sp,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
@@ -34,6 +35,10 @@ class AccidentServiceSelectionMedical extends StatelessWidget {
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
                 const WSelectedCarWidget(),
+                Text(
+                  'Do you need an ambulance?',
+                  style: CustomTextStyle().largeText,
+                ),
               ],
             ),
           ),
