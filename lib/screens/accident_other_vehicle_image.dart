@@ -1,7 +1,7 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class AccidentAmbulanceOptions extends StatelessWidget {
-  const AccidentAmbulanceOptions({super.key});
+class AccidentOtherVehicleImageCapture extends StatelessWidget {
+  const AccidentOtherVehicleImageCapture({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +32,31 @@ class AccidentAmbulanceOptions extends StatelessWidget {
                     ),
                   ],
                 ),
+                Text(
+                  'Other Vehicle',
+                  style: CustomTextStyle().largeText,
+                ),
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
                 const WSelectedCarWidget(),
                 Text(
-                  'Please, hold on, Medical assistance is on the way. as you wait, please, click “Next”  to take pictures of the affected vehicles',
+                  'Please, take the appropriate images of the affected areas as indicated in the images below',
                   style: CustomTextStyle().largeText,
+                  textAlign: TextAlign.center,
                 ),
                 WTextButton(
-                  onPressed: () {
-                    Get.toNamed('accident_image_capture');
+                  onPressed: () async {
+                    //TODO: Add images to accidents json file
+
+                    // final XFile? image = await picker.pickImage(
+                    //   source: ImageSource.camera,
+                    // );
+                    // carAcc.add(image);
+                    // print(carAcc.asMap());
+
+                    Get.toNamed('/accident_other_vehicles');
                   },
-                  text: 'next',
+                  text: 'Add Photos',
                 ),
               ],
             ),

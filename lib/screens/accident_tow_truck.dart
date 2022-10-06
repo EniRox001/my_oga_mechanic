@@ -1,7 +1,7 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class AccidentAmbulanceTimer extends StatelessWidget {
-  const AccidentAmbulanceTimer({super.key});
+class AccidentTowTruck extends StatelessWidget {
+  const AccidentTowTruck({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +32,21 @@ class AccidentAmbulanceTimer extends StatelessWidget {
                     ),
                   ],
                 ),
-                const WCarNameWidget(),
-                const WCarDetailsWidget(),
-                Image.asset(
-                  'assets/car_images/ambulance.png',
-                  height: Get.height / 4,
-                ),
                 Text(
-                  'Medical assitance is on it\'s way. Keep calm while we get to you.',
+                  'Towing Service'.toUpperCase(),
                   style: CustomTextStyle().largeText,
-                  textAlign: TextAlign.center,
+                ),
+                Image.asset(
+                  'assets/car_images/tow_truck.png',
+                  height: Get.height / 5,
+                ),
+                Column(
+                  children: [
+                    WMechanicData(title: 'Car Make', text: 'ECO BULL TOWING'),
+                    WMechanicData(title: 'Capacity', text: '3 TONS TOWING'),
+                    WMechanicData(title: 'Plate Number', text: 'IKJ232AC'),
+                    WMechanicData(title: 'Owner', text: 'OLALEKAN'),
+                  ],
                 ),
                 Text(
                   'Estimated Wait Time'.toUpperCase(),
@@ -51,17 +56,21 @@ class AccidentAmbulanceTimer extends StatelessWidget {
                   format: CountDownTimerFormat.minutesSeconds,
                   endTime: DateTime.now().add(
                     const Duration(
-                      seconds: 5,
+                      minutes: 1,
                     ),
                   ),
                   onEnd: () {},
                 ),
                 WTextButton(
-                  onPressed: () {
-                    Get.toNamed('/accident_ambulance_option');
-                  },
-                  text: 'next',
+                  onPressed: () {},
+                  text: 'Call Driver',
+                  color: Colors.red,
                 ),
+                WTextButton(
+                    onPressed: () {
+                      Get.toNamed('dashboard_two');
+                    },
+                    text: 'Close')
               ],
             ),
           ),

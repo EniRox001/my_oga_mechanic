@@ -47,6 +47,7 @@ dependencies:
   mongo_dart: ^0.7.4+1
   flutter_countdown_timer: ^4.1.0
   flutter_timer_countdown: ^1.0.5
+  image_picker: ^0.8.6
 
 dev_dependencies:
   flutter_test:

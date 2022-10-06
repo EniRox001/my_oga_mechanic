@@ -23,6 +23,12 @@ export 'screens/accident_service_selection.dart';
 export 'screens/accident_ambulance_selection.dart';
 export 'screens/accident_ambulance_timer.dart';
 export 'screens/accident_ambulance_options.dart';
+export 'screens/accident_image_capture.dart';
+export 'screens/accident_other_vehicles_options.dart';
+export 'screens/accident_other_vehicle_query.dart';
+export 'screens/accident_other_vehicle_image.dart';
+export 'screens/accident_tow_truck_query.dart';
+export 'screens/accident_tow_truck.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';
@@ -36,6 +42,7 @@ export 'dart:convert';
 export 'package:mongo_dart/mongo_dart.dart'
     hide Accumulator, State, Size, Builder, Switch;
 export 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
+export 'package:image_picker/image_picker.dart';
 
 //---------------Misc---------------//
 export 'routes/routes.dart';

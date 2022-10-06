@@ -1,7 +1,7 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class AccidentAmbulanceOptions extends StatelessWidget {
-  const AccidentAmbulanceOptions({super.key});
+class AccidentOtherVehiclesQuery extends StatelessWidget {
+  const AccidentOtherVehiclesQuery({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +32,25 @@ class AccidentAmbulanceOptions extends StatelessWidget {
                     ),
                   ],
                 ),
-                const WCarNameWidget(),
-                const WCarDetailsWidget(),
-                const WSelectedCarWidget(),
                 Text(
-                  'Please, hold on, Medical assistance is on the way. as you wait, please, click “Next”  to take pictures of the affected vehicles',
+                  'Is the vehicle registered on My Oga Mechanic?',
                   style: CustomTextStyle().largeText,
+                  textAlign: TextAlign.center,
                 ),
-                WTextButton(
-                  onPressed: () {
-                    Get.toNamed('accident_image_capture');
-                  },
-                  text: 'next',
+                Column(
+                  children: [
+                    WTextButton(
+                        onPressed: () {
+                          Get.toNamed('/accident_other_vehicle_image');
+                        },
+                        text: 'yes'),
+                    SizedBox(height: 20.0.h),
+                    WTextButton(
+                        onPressed: () {
+                          Get.toNamed('/user_registration_one');
+                        },
+                        text: 'no'),
+                  ],
                 ),
               ],
             ),

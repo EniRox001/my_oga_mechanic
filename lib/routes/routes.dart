@@ -90,5 +90,29 @@ class Routes {
       name: '/accident_ambulance_option',
       page: () => const AccidentAmbulanceOptions(),
     ),
+    GetPage(
+      name: '/accident_image_capture',
+      page: () => const AccidentImageCapture(),
+    ),
+    GetPage(
+      name: '/accident_other_vehicles',
+      page: () => const AccidentOtherVehicles(),
+    ),
+    GetPage(
+      name: '/accident_other_vehicles_query',
+      page: () => const AccidentOtherVehiclesQuery(),
+    ),
+    GetPage(
+      name: '/accident_other_vehicle_image',
+      page: () => const AccidentOtherVehicleImageCapture(),
+    ),
+    GetPage(
+      name: '/accident_tow_truck_query',
+      page: () => const AccidentTowTruckQuery(),
+    ),
+    GetPage(
+      name: '/accident_tow_truck',
+      page: () => const AccidentTowTruck(),
+    ),
   ];
 }
