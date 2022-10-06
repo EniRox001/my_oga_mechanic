@@ -85,16 +85,18 @@ class WTextButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.text,
+    this.color = Colors.black26,
   }) : super(key: key);
 
   final Function() onPressed;
   final String text;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(backgroundColor: Colors.black26),
+      style: ElevatedButton.styleFrom(backgroundColor: color),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Row(

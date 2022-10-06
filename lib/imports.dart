@@ -20,6 +20,7 @@ export 'screens/services_agreed_otp.dart';
 export 'screens/services_repair_completed.dart';
 export 'screens/services_rate_mechanic.dart';
 export 'screens/accident_service_selection.dart';
+export 'screens/accident_service_selection_medical_assistance.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';

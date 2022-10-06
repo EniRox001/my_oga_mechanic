@@ -21,7 +21,7 @@ class MyOgaApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData.dark(),
           title: 'My Oga App',
-          initialRoute: '/login_signup',
+          initialRoute: '/dashboard_two',
           getPages: Routes().getPage,
         );
       },

@@ -78,5 +78,9 @@ class Routes {
       name: '/accident_services_selection',
       page: () => const AccidentServiceSelection(),
     ),
+    GetPage(
+      name: '/accident_services_selection_medical',
+      page: () => const AccidentServiceSelectionMedical(),
+    ),
   ];
 }
