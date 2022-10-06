@@ -134,5 +134,9 @@ class Routes {
       name: '/menu_vehicle_profile',
       page: () => const MenuVehicleProfile(),
     ),
+    GetPage(
+      name: '/menu_edit_user_profile',
+      page: () => const MenuEditUserProfile(),
+    ),
   ];
 }

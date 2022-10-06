@@ -34,6 +34,7 @@ export 'screens/quick_fix.dart';
 export 'screens/menu_screen.dart';
 export 'screens/menu_add_edit_vehicles.dart';
 export 'screens/menu_vehicle_profile.dart';
+export 'screens/menu_edit_user_profile.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';

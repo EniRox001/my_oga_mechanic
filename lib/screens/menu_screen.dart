@@ -54,7 +54,9 @@ class MenuScreen extends StatelessWidget {
                       height: 10.0.h,
                     ),
                     WTextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/menu_edit_user_profile');
+                      },
                       text: 'edit user profile',
                     ),
                   ],

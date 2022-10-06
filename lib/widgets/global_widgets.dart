@@ -45,12 +45,14 @@ class WRegistrationFieldTextField extends StatelessWidget {
     required this.onChanged,
     required this.keyboardType,
     this.inputFormatter = const [],
+    this.label = '',
   }) : super(key: key);
 
   final String hintText;
   final Function(String value) onChanged;
   final TextInputType keyboardType;
   final List<TextInputFormatter> inputFormatter;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +61,10 @@ class WRegistrationFieldTextField extends StatelessWidget {
       onChanged: onChanged,
       inputFormatters: inputFormatter,
       decoration: InputDecoration(
+        label: Text(label),
+        labelStyle: TextStyle(
+          color: teal,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.0.sp),
         ),

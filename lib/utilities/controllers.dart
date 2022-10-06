@@ -147,7 +147,7 @@ class VehicleRegistrationOneControllers {
     );
   }
 
-  var plateNumberController = 'E5E345F'.obs;
+  var plateNumberController = ''.obs;
   onPlateNumberControllerChange(String value) {
     plateNumberController.value = value;
   }
