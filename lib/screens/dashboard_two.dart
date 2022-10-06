@@ -30,7 +30,9 @@ class DashboardTwo extends StatelessWidget {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/menu_screen');
+                      },
                       icon: const Icon(
                         Icons.menu,
                       ),
@@ -103,7 +105,9 @@ class DashboardTwo extends StatelessWidget {
                 ),
                 SizedBox(height: 10.0.h),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/quick_fix_category');
+                  },
                   icon: Icons.build,
                   text: 'quick fix',
                 ),

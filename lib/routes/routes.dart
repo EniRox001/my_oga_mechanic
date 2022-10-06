@@ -114,5 +114,17 @@ class Routes {
       name: '/accident_tow_truck',
       page: () => const AccidentTowTruck(),
     ),
+    GetPage(
+      name: '/quick_fix_category',
+      page: () => const QuickFixCategory(),
+    ),
+    GetPage(
+      name: '/quick_fix',
+      page: () => const QuickFix(),
+    ),
+    GetPage(
+      name: '/menu_screen',
+      page: () => const MenuScreen(),
+    ),
   ];
 }

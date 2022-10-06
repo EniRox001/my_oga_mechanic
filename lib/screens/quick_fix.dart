@@ -1,7 +1,7 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class AccidentTowTruck extends StatelessWidget {
-  const AccidentTowTruck({super.key});
+class QuickFix extends StatelessWidget {
+  const QuickFix({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,25 +32,20 @@ class AccidentTowTruck extends StatelessWidget {
                     ),
                   ],
                 ),
+                const WCarNameWidget(),
+                const WCarDetailsWidget(),
+                const WSelectedCarWidget(),
                 Text(
-                  'Towing Service'.toUpperCase(),
+                  'please wait',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                Text(
+                  'You are number',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                Text(
+                  '11',
                   style: CustomTextStyle().largeText,
-                ),
-                Image.asset(
-                  'assets/car_images/tow_truck.png',
-                  height: Get.height / 5,
-                ),
-                Column(
-                  children: const [
-                    WMechanicData(title: 'Car Make', text: 'ECO BULL TOWING'),
-                    WMechanicData(title: 'Capacity', text: '3 TONS TOWING'),
-                    WMechanicData(title: 'Plate Number', text: 'IKJ232AC'),
-                    WMechanicData(title: 'Owner', text: 'OLALEKAN'),
-                  ],
-                ),
-                Text(
-                  'Estimated Wait Time'.toUpperCase(),
-                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 TimerCountdown(
                   format: CountDownTimerFormat.minutesSeconds,
@@ -61,16 +56,6 @@ class AccidentTowTruck extends StatelessWidget {
                   ),
                   onEnd: () {},
                 ),
-                WTextButton(
-                  onPressed: () {},
-                  text: 'Call Driver',
-                  color: Colors.red,
-                ),
-                WTextButton(
-                    onPressed: () {
-                      Get.toNamed('dashboard_two');
-                    },
-                    text: 'Close')
               ],
             ),
           ),

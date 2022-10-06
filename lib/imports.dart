@@ -29,6 +29,9 @@ export 'screens/accident_other_vehicle_query.dart';
 export 'screens/accident_other_vehicle_image.dart';
 export 'screens/accident_tow_truck_query.dart';
 export 'screens/accident_tow_truck.dart';
+export 'screens/quick_fix_category.dart';
+export 'screens/quick_fix.dart';
+export 'screens/menu_screen.dart';
 
 //---------------Packages---------------//
 export 'package:get/get.dart';

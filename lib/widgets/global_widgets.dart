@@ -3,7 +3,11 @@ import 'package:my_oga_mechanic/imports.dart';
 class BackgroundWidget extends StatelessWidget {
   const BackgroundWidget({
     Key? key,
-    required this.gradientStops,
+    this.gradientStops = const [
+      0.1,
+      0.2,
+      0.8,
+    ],
     required this.child,
   }) : super(key: key);
 
