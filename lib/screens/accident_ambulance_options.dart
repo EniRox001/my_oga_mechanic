@@ -36,8 +36,12 @@ class AccidentAmbulanceOptions extends StatelessWidget {
                 const WCarDetailsWidget(),
                 const WSelectedCarWidget(),
                 Text(
-                  'Do you need an ambulance?',
+                  'Please, hold on, Medical assistance is on the way. as you wait, please, click “Next”  to take pictures of the affected vehicles',
                   style: CustomTextStyle().largeText,
+                ),
+                WTextButton(
+                  onPressed: () {},
+                  text: 'next',
                 ),
               ],
             ),
