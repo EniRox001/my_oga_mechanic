@@ -1,5 +1,7 @@
+import 'package:my_oga_mechanic/imports.dart';
+
 class User {
-  int id;
+  ObjectId id;
   String phoneNumber;
   String profilePicture;
   String emailAddress;
@@ -9,7 +11,6 @@ class User {
   String lastName;
   String dateOfBirth;
   String driversLicense;
-  Map cars;
 
   Map<String, dynamic> toMap() {
     return {
@@ -23,7 +24,6 @@ class User {
       'last name': lastName,
       'date of birth': dateOfBirth,
       'drivers license': driversLicense,
-      'cars': cars,
     };
   }
 
@@ -38,6 +38,5 @@ class User {
     this.lastName,
     this.dateOfBirth,
     this.driversLicense,
-    this.cars,
   );
 }

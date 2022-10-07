@@ -1,7 +1,10 @@
 import 'imports.dart';
-export 'package:mongo_dart/mongo_dart.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await connectDB();
   runApp(
     const MyOgaApp(),
@@ -21,7 +24,7 @@ class MyOgaApp extends StatelessWidget {
         return GetMaterialApp(
           theme: ThemeData.dark(),
           title: 'My Oga App',
-          initialRoute: '/dashboard_two',
+          initialRoute: '/login_signup',
           getPages: Routes().getPage,
         );
       },

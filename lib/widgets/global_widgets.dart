@@ -61,10 +61,6 @@ class WRegistrationFieldTextField extends StatelessWidget {
       onChanged: onChanged,
       inputFormatters: inputFormatter,
       decoration: InputDecoration(
-        label: Text(label),
-        labelStyle: TextStyle(
-          color: teal,
-        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.0.sp),
         ),

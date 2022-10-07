@@ -59,23 +59,10 @@ class LoginSignUp extends StatelessWidget {
                   backgroundColor: const Color(0xFFF2C94C),
                   shape: const StadiumBorder(),
                 ),
-                onPressed: () {
-                  Get.toNamed('/verify_phone_number');
-                  userCollection.insert(
-                    User(
-                      0,
-                      '',
-                      'profilePicture',
-                      'emailAddress',
-                      'homeAddress',
-                      'officeAddress',
-                      'firstName',
-                      'lastName',
-                      'dateOfBirth',
-                      'driversLicense',
-                      {},
-                    ).toMap(),
-                  );
+                onPressed: () async {
+                  // Get.toNamed('/verify_phone_number');
+
+                  checkUser(phoneNumberController.phoneNumberController.value);
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(

@@ -23,16 +23,7 @@ class UserRegistrationTwo extends StatelessWidget {
                   UserRegistrationTwoText().userRegistrationTitle.toUpperCase(),
                   style: CustomTextStyle().largeText,
                 ),
-                CircleAvatar(
-                  radius: 85.0.sp,
-                  backgroundColor: Colors.teal,
-                  child: CircleAvatar(
-                    backgroundImage: const AssetImage(
-                      'assets/images/myOgaMechanicLogo.png',
-                    ),
-                    radius: 83.0.sp,
-                  ),
-                ),
+                const WImagePicker(),
                 Text(
                   UserRegistrationTwoText().userRegistrationPageText,
                   style: Theme.of(context).textTheme.bodyLarge,
@@ -102,9 +93,7 @@ class UserRegistrationTwo extends StatelessWidget {
                   onPressed: () {
                     Get.toNamed('/driver_license_registration');
                   },
-                  text: UserRegistrationTwoText()
-                      .dateOfBirthControllerHintText
-                      .toUpperCase(),
+                  text: UserRegistrationTwoText().nextButtonText.toUpperCase(),
                 )
               ],
             ),

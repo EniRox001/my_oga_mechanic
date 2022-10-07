@@ -108,7 +108,9 @@ class VehicleRegistrationTwo extends StatelessWidget {
                   height: 150.0.h,
                 ),
                 WTextButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    await createUser();
+                    await createCar();
                     Get.toNamed('/dashboard_two');
                   },
                   text: VehicleRegistrationTwoText().nextButtonText,

@@ -2,7 +2,6 @@ import 'package:my_oga_mechanic/imports.dart';
 
 final LoginSignUpControllers phoneNumberController =
     Get.put(LoginSignUpControllers());
-
 final VerifyPhoneNumberControllers verifyPhoneNumberControllers =
     Get.put(VerifyPhoneNumberControllers());
 final UserRegistrationOneControllers userRegistrationOneControllers =

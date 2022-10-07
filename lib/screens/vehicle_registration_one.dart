@@ -1,5 +1,51 @@
 import 'package:my_oga_mechanic/imports.dart';
 
+String dropdownvalue = 'Color';
+
+// List of items in our dropdown menu
+var items = [
+  'Color',
+  'Red',
+  'Blue',
+  'Green',
+  'Orange',
+  'Black',
+  'Yellow',
+  'Purple',
+  'Silver',
+  'Brown',
+  'Grey',
+  'Pink',
+  'Olive',
+  'Maroon',
+  'Violet',
+  'Charcoal',
+  'Magenta',
+  'Bronze',
+  'Cream',
+  'Gold',
+  'Tan',
+  'Teal',
+  'Mustard',
+  'Navy Blue',
+  'Coral',
+  'Burgundy',
+  'Lavender',
+  'Mauve',
+  'Peach',
+  'Rust',
+  'Indigo',
+  'Ruby',
+  'Clay',
+  'Cyan',
+  'Azure',
+  'Beige',
+  'Off White',
+  'Turquoise',
+  'Amber',
+  'Mint',
+];
+
 class VehicleRegistrationOne extends StatelessWidget {
   const VehicleRegistrationOne({super.key});
 
@@ -47,7 +93,8 @@ class VehicleRegistrationOne extends StatelessWidget {
                         Obx(
                           () => Text(
                             vehicleRegistrationOneControllers
-                                .makeController.value,
+                                .makeController.value
+                                .toUpperCase(),
                             style: CustomTextStyle().largeText,
                           ),
                         ),
@@ -55,7 +102,8 @@ class VehicleRegistrationOne extends StatelessWidget {
                         Obx(
                           () => Text(
                             vehicleRegistrationOneControllers
-                                .modelController.value,
+                                .modelController.value
+                                .toUpperCase(),
                             style: CustomTextStyle().largeText,
                           ),
                         ),
@@ -63,7 +111,8 @@ class VehicleRegistrationOne extends StatelessWidget {
                         Obx(
                           () => Text(
                             vehicleRegistrationOneControllers
-                                .plateNumberController.value,
+                                .plateNumberController.value
+                                .toUpperCase(),
                             style: CustomTextStyle().largeText,
                           ),
                         ),
@@ -135,44 +184,41 @@ class VehicleRegistrationOne extends StatelessWidget {
                   keyboardType: TextInputType.text,
                 ),
                 WRegistrationFieldTextField(
-                  hintText: VehicleRegistrationOneText().nextButtonText,
+                  hintText: VehicleRegistrationOneText()
+                      .vehicleRegistrationPlateNumberHintText,
                   onChanged: (value) {
                     vehicleRegistrationOneControllers
                         .onPlateNumberControllerChange(value);
                   },
                   keyboardType: TextInputType.text,
                 ),
-                GestureDetector(
-                  onTap: () {
-                    vehicleRegistrationOneControllers
-                        .onColorControllerChange(context);
-                  },
-                  child: Obx(() {
-                    return Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: teal,
-                          width: 3.0.w,
-                        ),
-                        borderRadius: BorderRadius.circular(15.0.sp),
-                        color: vehicleRegistrationOneControllers
-                            .currentColor.value,
+                Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.0.sp,
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: teal,
+                        width: 3.0.w,
                       ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(18.0.sp),
-                            child: (Text(
-                              'Color',
-                              style: TextStyle(
-                                  color: Colors.white70, fontSize: 22.0.sp),
-                            )),
-                          ),
-                        ],
+                      borderRadius: BorderRadius.circular(15.0.sp),
+                      color: Colors.black87,
+                    ),
+                    child: Obx(
+                      () => DropdownButton(
+                        isExpanded: true,
+                        value: vehicleRegistrationOneControllers.carColor.value,
+                        items: items.map((String items) {
+                          return DropdownMenuItem(
+                              value: items, child: Text(items));
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          vehicleRegistrationOneControllers.onCarColorChanged(
+                            newValue!,
+                          );
+                        },
                       ),
-                    );
-                  }),
-                ),
+                    )),
                 SizedBox(
                   height: 150.0.h,
                 ),

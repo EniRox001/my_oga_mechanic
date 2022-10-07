@@ -48,6 +48,13 @@ dependencies:
   flutter_countdown_timer: ^4.1.0
   flutter_timer_countdown: ^1.0.5
   image_picker: ^0.8.6
+  firebase_core: ^1.24.0
+  firebase_auth: ^3.11.2
+  cloudinary_public: ^0.13.0
+  cached_network_image: ^3.2.2
+  http: ^0.13.5
+  dio: ^4.0.6
+  color_converter: ^0.2.1
 
 dev_dependencies:
   flutter_test:

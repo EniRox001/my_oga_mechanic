@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "397046527349",
+    "project_id": "my-oga-mechanic-a7f63",
+    "storage_bucket": "my-oga-mechanic-a7f63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397046527349:android:04e0cacdd3da41501f4f3c",
+        "android_client_info": {
+          "package_name": "com.example.my_oga_mechanic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397046527349-guq6jgujm9aksopkv77gs8k9a7j7hu0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjcdpRApivvPD9EhATdg-e5i7WZSHWCtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397046527349-guq6jgujm9aksopkv77gs8k9a7j7hu0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

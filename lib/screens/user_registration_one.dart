@@ -1,8 +1,19 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class UserRegistrationOne extends StatelessWidget {
+final ImagePicker profilePicturePicker = ImagePicker();
+final cloudinary = CloudinaryPublic('myogamechanic', 'kf3reywm', cache: false);
+
+class UserRegistrationOne extends StatefulWidget {
   const UserRegistrationOne({super.key});
 
+  @override
+  State<UserRegistrationOne> createState() => _UserRegistrationOneState();
+}
+
+var selectedImage = 'unset';
+var profilePictureUrl = '';
+
+class _UserRegistrationOneState extends State<UserRegistrationOne> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,26 +34,17 @@ class UserRegistrationOne extends StatelessWidget {
                   UserRegistrationOneText().userRegistrationTitle.toUpperCase(),
                   style: CustomTextStyle().largeText,
                 ),
-                CircleAvatar(
-                  backgroundColor: teal,
-                  radius: 85.sp,
-                  child: CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 83.sp,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          const Icon(
-                            Icons.add,
-                            color: teal,
-                          ),
-                          Text(
-                            UserRegistrationOneText()
-                                .profilePictureText
-                                .toTitleCase(),
-                          ),
-                        ],
-                      )),
+                GestureDetector(
+                  onTap: () async {
+                    setState(() {
+                      selectedImage = 'setting';
+                    });
+                    await setProfilePicture();
+                    setState(() {
+                      selectedImage = 'set';
+                    });
+                  },
+                  child: const WImagePicker(),
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
@@ -99,5 +101,47 @@ class UserRegistrationOne extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class WImagePicker extends StatelessWidget {
+  const WImagePicker({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (selectedImage == 'unset') {
+      return CircleAvatar(
+        backgroundColor: teal,
+        radius: 85.sp,
+        child: CircleAvatar(
+          backgroundColor: Colors.black,
+          radius: 83.sp,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Icon(
+                Icons.add,
+                color: teal,
+              ),
+              Text(
+                UserRegistrationOneText().profilePictureText.toTitleCase(),
+              ),
+            ],
+          ),
+        ),
+      );
+    } else if (selectedImage == 'setting') {
+      return const CircularProgressIndicator();
+    } else {
+      return CircleAvatar(
+        backgroundImage: NetworkImage(
+          profilePictureUrl,
+          scale: 2,
+        ),
+        radius: 70,
+      );
+    }
   }
 }

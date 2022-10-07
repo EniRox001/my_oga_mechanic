@@ -15,6 +15,16 @@ class VerifyPhoneNumberControllers extends GetxController {
 }
 
 class UserRegistrationOneControllers {
+  var profilePictureBool = true.obs;
+  onProfilePictureBoolChanged(bool value) {
+    profilePictureBool.value = true;
+  }
+
+  var profilePictureUrl = ''.obs;
+  onProfilePictureChanged(String value) {
+    profilePictureUrl.value = value;
+  }
+
   var phoneNumberController = ''.obs;
   onPhoneNumberChanged(String value) {
     phoneNumberController.value = value;
@@ -70,12 +80,12 @@ class DriversLicenseRegistrationControllers {
 }
 
 class VehicleRegistrationOneControllers {
-  var makeController = 'Toyota'.obs;
+  var makeController = ''.obs;
   onMakeControllerChange(String value) {
     makeController.value = value;
   }
 
-  var modelController = 'Camry'.obs;
+  var modelController = ''.obs;
   onModelControllerChange(String value) {
     modelController.value = value;
   }
@@ -117,34 +127,9 @@ class VehicleRegistrationOneControllers {
     bodyBuildController.value = value;
   }
 
-  var pickerColor = const Color(0xff443a49).obs;
-  var currentColor = const Color(0xff443a49).obs;
-  Future<void> onColorControllerChange(BuildContext context) async {
-    showDialog(
-      context: context,
-      builder: (_) {
-        return AlertDialog(
-          title: const Text('Choose Color'),
-          content: ColorPicker(
-            pickerColor: pickerColor.value,
-            onColorChanged: (color) {
-              pickerColor.value = color;
-            },
-          ),
-          actions: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                currentColor = pickerColor;
-                Navigator.of(context).pop();
-              },
-              child: const Text(
-                'Got it',
-              ),
-            )
-          ],
-        );
-      },
-    );
+  var carColor = 'Color'.obs;
+  onCarColorChanged(String value) {
+    carColor.value = value;
   }
 
   var plateNumberController = ''.obs;

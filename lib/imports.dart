@@ -49,6 +49,13 @@ export 'package:mongo_dart/mongo_dart.dart'
     hide Accumulator, State, Size, Builder, Switch;
 export 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 export 'package:image_picker/image_picker.dart';
+export 'package:firebase_core/firebase_core.dart';
+export 'package:cloudinary_public/cloudinary_public.dart';
+export 'package:firebase_auth/firebase_auth.dart' hide User;
+export 'firebase_options.dart';
+export 'package:cached_network_image/cached_network_image.dart';
+export 'package:dio/dio.dart' hide FormData, Response, MultipartFile;
+export 'package:color_converter/color_converter.dart';
 
 //---------------Misc---------------//
 export 'routes/routes.dart';
@@ -60,8 +67,11 @@ export 'package:my_oga_mechanic/utilities/image_paths.dart';
 export 'package:my_oga_mechanic/utilities/controllers.dart';
 export 'utilities/imported_controllers.dart';
 export 'database/database_functions.dart';
+export 'cloud functions/cloudinary_functions.dart';
+export 'cloud functions/verify_license.dart';
 
 //---------------Models---------------//
 export 'models/user_model.dart';
+export 'models/car_model.dart';
 
 //---------------Providers---------------//
