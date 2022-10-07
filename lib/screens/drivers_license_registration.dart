@@ -47,7 +47,13 @@ class _DriversLicenseRegistrationState
                             .toUpperCase(),
                         style: CustomTextStyle().largeText,
                       ),
-                      const WImagePicker(),
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          profilePictureUrl,
+                          scale: 2,
+                        ),
+                        radius: 70,
+                      ),
                       Text(
                         DriversLicenseRegistrationText()
                             .driversLicenseRegistrationPageText,

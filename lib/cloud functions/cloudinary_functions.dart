@@ -8,6 +8,7 @@ setProfilePicture() async {
     CloudinaryResponse response = await cloudinary.uploadFile(
       CloudinaryFile.fromFile(
         image!.path,
+        folder: 'userProfilePicture',
         resourceType: CloudinaryResourceType.Image,
       ),
     );

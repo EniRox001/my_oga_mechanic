@@ -23,7 +23,13 @@ class UserRegistrationTwo extends StatelessWidget {
                   UserRegistrationTwoText().userRegistrationTitle.toUpperCase(),
                   style: CustomTextStyle().largeText,
                 ),
-                const WImagePicker(),
+                CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    profilePictureUrl,
+                    scale: 2,
+                  ),
+                  radius: 70,
+                ),
                 Text(
                   UserRegistrationTwoText().userRegistrationPageText,
                   style: Theme.of(context).textTheme.bodyLarge,

@@ -10,10 +10,10 @@ class UserRegistrationOne extends StatefulWidget {
   State<UserRegistrationOne> createState() => _UserRegistrationOneState();
 }
 
-var selectedImage = 'unset';
 var profilePictureUrl = '';
 
 class _UserRegistrationOneState extends State<UserRegistrationOne> {
+  var selectedImage = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,15 +36,52 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                 ),
                 GestureDetector(
                   onTap: () async {
-                    setState(() {
-                      selectedImage = 'setting';
-                    });
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
+                    );
                     await setProfilePicture();
+
                     setState(() {
-                      selectedImage = 'set';
+                      selectedImage = true;
                     });
+                    //close the circular dialog
+                    Get.back();
                   },
-                  child: const WImagePicker(),
+                  child: selectedImage
+                      ? CircleAvatar(
+                          backgroundImage: NetworkImage(
+                            profilePictureUrl,
+                            scale: 2,
+                          ),
+                          radius: 70,
+                        )
+                      : CircleAvatar(
+                          backgroundColor: teal,
+                          radius: 85.sp,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.black,
+                            radius: 83.sp,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                const Icon(
+                                  Icons.add,
+                                  color: teal,
+                                ),
+                                Text(
+                                  UserRegistrationOneText()
+                                      .profilePictureText
+                                      .toTitleCase(),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
@@ -101,47 +138,5 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
         ),
       ),
     );
-  }
-}
-
-class WImagePicker extends StatelessWidget {
-  const WImagePicker({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    if (selectedImage == 'unset') {
-      return CircleAvatar(
-        backgroundColor: teal,
-        radius: 85.sp,
-        child: CircleAvatar(
-          backgroundColor: Colors.black,
-          radius: 83.sp,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Icon(
-                Icons.add,
-                color: teal,
-              ),
-              Text(
-                UserRegistrationOneText().profilePictureText.toTitleCase(),
-              ),
-            ],
-          ),
-        ),
-      );
-    } else if (selectedImage == 'setting') {
-      return const CircularProgressIndicator();
-    } else {
-      return CircleAvatar(
-        backgroundImage: NetworkImage(
-          profilePictureUrl,
-          scale: 2,
-        ),
-        radius: 70,
-      );
-    }
   }
 }
