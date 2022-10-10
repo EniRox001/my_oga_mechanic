@@ -40,10 +40,11 @@ class ServiceRequest extends StatelessWidget {
                 Expanded(
                   child: ListView.separated(
                     scrollDirection: Axis.vertical,
-                    itemCount: mechanicData.length,
+                    itemCount: mechanics.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
+                          selectedMechanic = mechanics[index];
                           Get.toNamed('/service_mechanic');
                         },
                         child: Container(
@@ -51,12 +52,11 @@ class ServiceRequest extends StatelessWidget {
                               color: Colors.black38,
                               borderRadius: BorderRadius.circular(10.0.sp)),
                           child: ListTile(
-                            title:
-                                Text(mechanicData[index]['service provider']),
+                            title: Text(mechanics[index]['full name']),
                             subtitle:
-                                Text(mechanicData[index]['rating'].toString()),
-                            trailing: Text(
-                                mechanicData[index]['proximity'].toString()),
+                                Text(mechanics[index]['ratings'].toString()),
+                            trailing:
+                                Text(mechanics[index]['ratings'].toString()),
                           ),
                         ),
                       );

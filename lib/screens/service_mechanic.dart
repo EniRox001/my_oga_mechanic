@@ -1,5 +1,12 @@
 import 'package:my_oga_mechanic/imports.dart';
 
+final mechanicAreaOfSpecializion = selectedMechanic['areas of specialization'];
+
+callNumber() async {
+  final number = selectedMechanic['phone'].toString();
+  bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+}
+
 class ServiceMechanic extends StatelessWidget {
   const ServiceMechanic({super.key});
 
@@ -18,8 +25,8 @@ class ServiceMechanic extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Image.asset(
-                    'assets/images/mechanic_pic.jpg',
+                  Image.network(
+                    selectedMechanic['profile picture'].toString(),
                     height: Get.height / 5,
                     width: Get.width,
                     fit: BoxFit.cover,
@@ -47,22 +54,25 @@ class ServiceMechanic extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    'Ogene Auto Shop',
+                    selectedMechanic['full name'].toString().toUpperCase(),
                     style: CustomTextStyle().largeText,
                   ),
                   Text(
-                    '11 Kasim Street, off ikeja roa, Ipaja, Lagos',
+                    selectedMechanic['address'].toString().toTitleCase(),
                     style: Theme.of(context).textTheme.headline5,
                     textAlign: TextAlign.center,
                   ),
                   Wrap(
                     spacing: 10.0.w,
                     runSpacing: 10.0.h,
-                    children: const [
-                      WExpWidget(text: 'Mechanical'),
-                      WExpWidget(text: 'Eletrical'),
-                      WExpWidget(text: 'Mechanical'),
-                      WExpWidget(text: 'Eletrical'),
+                    children: [
+                      for (var i = 0;
+                          i < mechanicAreaOfSpecializion.length;
+                          i++)
+                        WExpWidget(
+                            text: mechanicAreaOfSpecializion[i]
+                                .toString()
+                                .toTitleCase()),
                     ],
                   ),
                 ],
@@ -82,7 +92,7 @@ class ServiceMechanic extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '5',
+                          selectedMechanic['cars in cue'].toString(),
                           style: TextStyle(
                             fontSize: 32.0.sp,
                             color: Colors.black,
@@ -93,14 +103,23 @@ class ServiceMechanic extends StatelessWidget {
                   ],
                 ),
               ),
-              const WMechanicData(title: 'Cars Fixed', text: '2200'),
-              const WMechanicData(title: 'Proximity', text: '0.3m'),
-              const WMechanicData(title: 'Rating', text: '4.5'),
+              WMechanicData(
+                  title: 'Cars Fixed',
+                  text: selectedMechanic['cars fixed'].toString()),
+              WMechanicData(
+                  title: 'Proximity',
+                  text: '${selectedMechanic['proximity'].toString()}m'),
+              WMechanicData(
+                title: 'Rating',
+                text: selectedMechanic['ratings'].toString(),
+              ),
               const WMechanicData(title: 'Class', text: 'Level B'),
-              const WMechanicData(title: 'Pricing', text: '4.5'),
+              WMechanicData(
+                  title: 'Pricing',
+                  text: selectedMechanic['pricing'].toString()),
               WDashboardButton(
                 onPressed: () {
-                  //TODO: Open phone and call number
+                  callNumber();
                 },
                 icon: Icons.phone,
                 text: 'Call to confirm',

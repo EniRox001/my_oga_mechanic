@@ -39,49 +39,74 @@ class ServicesOne extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
                 WDashboardButton(
-                  onPressed: () {
-                    Get.toNamed('service_request');
+                  onPressed: () async {
+                    await getMechanics(
+                        cars['make'].toString().toLowerCase(), 'mechanical');
                   },
                   icon: Icons.build,
                   text: 'mechanical',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(
+                        cars['make'].toString().toLowerCase(), 'electrical');
+                  },
                   icon: Icons.bolt,
                   text: 'electrical',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(
+                        cars['make'].toString().toLowerCase(), 'vulcanizer');
+                  },
                   icon: Icons.tire_repair,
                   text: 'tyre (vulcanizer)',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(
+                        cars['make'].toString().toLowerCase(), 'painter');
+                  },
                   icon: Icons.format_paint,
                   text: 'painter',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(
+                        cars['make'].toString().toLowerCase(), 'upholstery');
+                  },
                   icon: Icons.home_max,
                   text: 'upholstery',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(cars['make'].toString().toLowerCase(),
+                        'air conditioning');
+                  },
                   icon: Icons.heat_pump,
                   text: 'air conditioning',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(cars['make'].toString().toLowerCase(),
+                        'body work (panel beater)');
+                  },
                   icon: Icons.local_shipping,
                   text: 'body work/panel beater',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(
+                        cars['make'].toString().toLowerCase(), 'sound man');
+                  },
                   icon: Icons.surround_sound,
                   text: 'sound man',
                 ),
                 WDashboardButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await getMechanics(
+                        cars['make'].toString().toLowerCase(), 'pimp my ride');
+                  },
                   icon: Icons.star_border_outlined,
                   text: 'pimp my ride',
                 ),

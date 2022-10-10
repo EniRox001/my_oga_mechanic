@@ -56,7 +56,7 @@ export 'firebase_options.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:dio/dio.dart' hide FormData, Response, MultipartFile;
 export 'package:color_converter/color_converter.dart';
-
+export 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 //---------------Misc---------------//
 export 'routes/routes.dart';
 export 'package:my_oga_mechanic/utilities/constants.dart';

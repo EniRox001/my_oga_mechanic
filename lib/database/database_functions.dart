@@ -6,8 +6,11 @@ ObjectId userUniqueId = ObjectId();
 
 var userCollection;
 var carsCollection;
+var mechanicCollection;
 var user;
 var cars;
+var mechanics;
+var selectedMechanic;
 
 connectDB() async {
   var db = await Db.create(
@@ -19,6 +22,25 @@ connectDB() async {
 
   userCollection = userDatabase;
   carsCollection = carsDatabase;
+  mechanicCollection = mechanicDatabase;
+}
+
+getMechanics(String model, String workPart) async {
+  mechanicCollection
+      .find(
+        {
+          'vehicle brand': model,
+          'areas of specialization': workPart,
+        },
+      )
+      .toList()
+      .then(
+        (value) {
+          mechanics = value;
+          print(mechanics.length);
+          Get.toNamed('service_request');
+        },
+      );
 }
 
 checkUser(String number) async {
@@ -120,5 +142,3 @@ createCar() async {
     ).toMap(),
   );
 }
-
-getMechanics() async {}
