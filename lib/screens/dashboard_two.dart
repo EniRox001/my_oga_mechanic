@@ -19,16 +19,8 @@ class DashboardTwo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    IconButton(
-                      onPressed: () {
-                        Get.back();
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios,
-                      ),
-                    ),
                     IconButton(
                       onPressed: () {
                         Get.toNamed('/menu_screen');
@@ -79,6 +71,7 @@ class DashboardTwo extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.all(10.0.sp),
                             child: Text(
+                              //TODO: Add next service data document data here
                               'Nov 30, 2022',
                               style: Theme.of(context).textTheme.headline5,
                             ),
@@ -94,6 +87,7 @@ class DashboardTwo extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.all(10.0.sp),
                             child: Text(
+                              //TODO: Add document expiring data document data here
                               'Nov 30, 2022',
                               style: Theme.of(context).textTheme.headline5,
                             ),

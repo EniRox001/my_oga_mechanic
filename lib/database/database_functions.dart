@@ -7,6 +7,7 @@ ObjectId userUniqueId = ObjectId();
 var userCollection;
 var carsCollection;
 var user;
+var cars;
 
 connectDB() async {
   var db = await Db.create(
@@ -14,12 +15,13 @@ connectDB() async {
   await db.open();
   final userDatabase = db.collection('users');
   final carsDatabase = db.collection('cars');
+  final mechanicDatabase = db.collection('mechanics');
 
   userCollection = userDatabase;
   carsCollection = carsDatabase;
 }
 
-void checkUser(String number) {
+checkUser(String number) async {
   userCollection
       .find(
         {'phone number': number},
@@ -28,10 +30,30 @@ void checkUser(String number) {
       .then(
         (value) {
           if (value.length > 0) {
-            user = value;
-            print(value);
+            user = value[0];
+            print(value[0]);
+            getUserCars();
           } else {
             Get.toNamed('/user_registration_one');
+          }
+        },
+      );
+}
+
+getUserCars() {
+  carsCollection
+      .find(
+        {'id': user['id']},
+      )
+      .toList()
+      .then(
+        (value) {
+          if (value.length > 0) {
+            cars = value[0];
+            print(value[0]);
+            Get.toNamed('/dashboard_two');
+          } else {
+            print('collection was not found');
           }
         },
       );
@@ -64,7 +86,7 @@ createUser() async {
       driversLicenseRegistrationControllers.driversLicenseController.value
           .trim()
           .toLowerCase(),
-    ),
+    ).toMap(),
   );
 }
 
@@ -95,6 +117,8 @@ createCar() async {
       vehicleRegistrationTwoControllers.insuranceLicenseController.value
           .trim()
           .toLowerCase(),
-    ),
+    ).toMap(),
   );
 }
+
+getMechanics() async {}

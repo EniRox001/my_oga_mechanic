@@ -60,9 +60,9 @@ class LoginSignUp extends StatelessWidget {
                   shape: const StadiumBorder(),
                 ),
                 onPressed: () async {
-                  // Get.toNamed('/verify_phone_number');
-
-                  checkUser(phoneNumberController.phoneNumberController.value);
+                  await checkUser(
+                    phoneNumberController.phoneNumberController.value,
+                  );
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(

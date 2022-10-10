@@ -109,8 +109,17 @@ class VehicleRegistrationTwo extends StatelessWidget {
                 ),
                 WTextButton(
                   onPressed: () async {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
+                    );
                     await createUser();
                     await createCar();
+                    Navigator.of(context, rootNavigator: true).pop('dialog');
                     Get.toNamed('/dashboard_two');
                   },
                   text: VehicleRegistrationTwoText().nextButtonText,

@@ -238,17 +238,13 @@ class WCarNameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Obx(
-          () => Text(
-            '${vehicleRegistrationOneControllers.makeController}',
-            style: Theme.of(context).textTheme.headline4,
-          ),
+        Text(
+          cars['make'].toString().toCapitalized(),
+          style: Theme.of(context).textTheme.headline4,
         ),
-        Obx(
-          () => Text(
-            '${vehicleRegistrationOneControllers.modelController}',
-            style: Theme.of(context).textTheme.headline6,
-          ),
+        Text(
+          cars['model'].toString().toCapitalized(),
+          style: Theme.of(context).textTheme.headline6,
         ),
       ],
     );
@@ -281,25 +277,20 @@ class WCarDetailsWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             //Make
-            Obx(
-              () => Text(
-                vehicleRegistrationOneControllers.makeController.value,
-                style: CustomTextStyle().largeText,
-              ),
+            Text(
+              cars['make'].toString().toUpperCase(),
+              style: CustomTextStyle().largeText,
             ),
             //Model
-            Obx(
-              () => Text(
-                vehicleRegistrationOneControllers.modelController.value,
-                style: CustomTextStyle().largeText,
-              ),
+            Text(
+              cars['model'].toString().toUpperCase(),
+              style: CustomTextStyle().largeText,
             ),
+
             //Body Build
-            Obx(
-              () => Text(
-                vehicleRegistrationOneControllers.plateNumberController.value,
-                style: CustomTextStyle().largeText,
-              ),
+            Text(
+              cars['plate number'].toString().toUpperCase(),
+              style: CustomTextStyle().largeText,
             ),
           ],
         ),
