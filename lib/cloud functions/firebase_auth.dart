@@ -6,15 +6,17 @@ var verifyNumberMessage = '';
 
 verifyNumber(String number) async {
   try {
-    auth.verifyPhoneNumber(
+    await auth.verifyPhoneNumber(
       phoneNumber: number,
-      verificationCompleted: (PhoneAuthCredential credential) {
-        Get.toNamed('/verify_phone_number');
+      verificationCompleted: (PhoneAuthCredential credential) {},
+      verificationFailed: (FirebaseAuthException e) {
+        verifyResponse = 'Please enter a valid number';
       },
-      verificationFailed: (FirebaseAuthException e) {},
       codeSent: (String verificationId, int? resendToken) {
         verficationIdRecieved = verificationId;
         print("verificationId $verificationId");
+        verifyResponse = 'Valid number provided';
+        Get.toNamed('/verify_phone_number');
       },
       codeAutoRetrievalTimeout: (String verificationId) {},
     );
@@ -41,6 +43,9 @@ verifyCode(String code) async {
     switch (e.code) {
       case 'invalid-verification-code':
         codeMessage = 'The provided code is invalid';
+        break;
+      case 'invalid-verification-id':
+        codeMessage = 'Please enter the code';
         break;
       default:
         codeMessage = 'An unknown error occured.';

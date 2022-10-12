@@ -11,7 +11,7 @@ trimNumber(String number) {
     var fullNum = intCode + num;
     return fullNum;
   } else {
-    return '';
+    return '080';
   }
 }
 
@@ -80,24 +80,36 @@ class _LoginSignUpState extends State<LoginSignUp> {
                   shape: const StadiumBorder(),
                 ),
                 onPressed: () async {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return SizedBox(
+                          height: 20.0,
+                          width: 20.0,
+                          child: Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        );
+                      });
                   await verifyNumber(
                     trimNumber(
                       phoneNumberController.phoneNumberController.value,
                     ),
                   );
-
-                  setState(() {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (context) => Padding(
-                        padding: EdgeInsets.all(16.0.sp),
-                        child: Text(
-                          verifyNumberMessage,
-                          style: CustomTextStyle().largeText,
-                          textAlign: TextAlign.center,
+                  Future.delayed(Duration(seconds: 8), () {
+                    setState(() {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => Padding(
+                          padding: EdgeInsets.all(16.0.sp),
+                          child: Text(
+                            verifyResponse,
+                            style: CustomTextStyle().largeText,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                      ),
-                    );
+                      );
+                    });
                   });
                 },
                 child: Padding(
