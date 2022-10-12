@@ -69,6 +69,7 @@ export 'utilities/imported_controllers.dart';
 export 'database/database_functions.dart';
 export 'cloud functions/cloudinary_functions.dart';
 export 'cloud functions/verify_license.dart';
+export 'package:firebase_auth/firebase_auth.dart' hide User;
 
 //---------------Models---------------//
 export 'models/user_model.dart';

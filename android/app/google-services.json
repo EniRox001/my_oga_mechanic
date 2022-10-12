@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "397046527349-4op1r3mi053rpfsnhpbg687o3a134cuv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.my_oga_mechanic",
+            "certificate_hash": "50887213245d880bc91395afeb7b3aa97d575b55"
+          }
+        },
+        {
           "client_id": "397046527349-guq6jgujm9aksopkv77gs8k9a7j7hu0p.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "397046527349-guq6jgujm9aksopkv77gs8k9a7j7hu0p.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "397046527349-reder8rsl2r770l826inh1acshl06r11.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.myOgaMechanic"
+              }
             }
           ]
         }

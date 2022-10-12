@@ -22,6 +22,7 @@ class MyOgaApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData.dark(),
           title: 'My Oga App',
           initialRoute: '/login_signup',

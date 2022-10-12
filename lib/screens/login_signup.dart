@@ -1,4 +1,14 @@
+import 'package:my_oga_mechanic/cloud%20functions/firebase_auth.dart';
 import 'package:my_oga_mechanic/imports.dart';
+
+var verficationIdRecieved = '';
+
+trimNumber(String number) {
+  var num = number.substring(1);
+  var intCode = '+234';
+  var fullNum = num + intCode;
+  return fullNum;
+}
 
 class LoginSignUp extends StatelessWidget {
   const LoginSignUp({super.key});
@@ -60,8 +70,13 @@ class LoginSignUp extends StatelessWidget {
                   shape: const StadiumBorder(),
                 ),
                 onPressed: () async {
-                  await checkUser(
-                    phoneNumberController.phoneNumberController.value,
+                  // await checkUser(
+                  //   phoneNumberController.phoneNumberController.value,
+                  // );
+                  verifyNumber(
+                    trimNumber(
+                      phoneNumberController.phoneNumberController.value,
+                    ),
                   );
                 },
                 child: Padding(
