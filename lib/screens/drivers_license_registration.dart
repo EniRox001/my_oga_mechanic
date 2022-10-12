@@ -86,8 +86,12 @@ class _DriversLicenseRegistrationState
                           showModalBottomSheet(
                             context: context,
                             builder: (context) => Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(idMessage),
+                              padding: EdgeInsets.all(16.0.sp),
+                              child: Text(
+                                idMessage,
+                                style: CustomTextStyle().largeText,
+                                textAlign: TextAlign.center,
+                              ),
                             ),
                           );
                         },

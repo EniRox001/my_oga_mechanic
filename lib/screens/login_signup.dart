@@ -5,15 +5,24 @@ var verficationIdRecieved = '';
 var verifyResponse = '';
 
 trimNumber(String number) {
-  var num = number.substring(1);
-  var intCode = '+234';
-  var fullNum = intCode + num;
-  return fullNum;
+  if (number.length > 1) {
+    var num = number.substring(1);
+    var intCode = '+234';
+    var fullNum = intCode + num;
+    return fullNum;
+  } else {
+    return '';
+  }
 }
 
-class LoginSignUp extends StatelessWidget {
+class LoginSignUp extends StatefulWidget {
   const LoginSignUp({super.key});
 
+  @override
+  State<LoginSignUp> createState() => _LoginSignUpState();
+}
+
+class _LoginSignUpState extends State<LoginSignUp> {
   @override
   Widget build(BuildContext context) {
     final fullHeight = Get.height;
@@ -71,15 +80,25 @@ class LoginSignUp extends StatelessWidget {
                   shape: const StadiumBorder(),
                 ),
                 onPressed: () async {
-                  // await checkUser(
-                  //   phoneNumberController.phoneNumberController.value,
-                  // );
-                  verifyNumber(
+                  await verifyNumber(
                     trimNumber(
                       phoneNumberController.phoneNumberController.value,
                     ),
                   );
-                  Get.toNamed('/verify_phone_number');
+
+                  setState(() {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => Padding(
+                        padding: EdgeInsets.all(16.0.sp),
+                        child: Text(
+                          verifyNumberMessage,
+                          style: CustomTextStyle().largeText,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    );
+                  });
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(

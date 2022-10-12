@@ -1,9 +1,14 @@
 import 'package:my_oga_mechanic/cloud%20functions/firebase_auth.dart';
 import 'package:my_oga_mechanic/imports.dart';
 
-class VerifyPhoneNumber extends StatelessWidget {
+class VerifyPhoneNumber extends StatefulWidget {
   const VerifyPhoneNumber({super.key});
 
+  @override
+  State<VerifyPhoneNumber> createState() => _VerifyPhoneNumberState();
+}
+
+class _VerifyPhoneNumberState extends State<VerifyPhoneNumber> {
   @override
   Widget build(BuildContext context) {
     final fullHeight = Get.height;
@@ -71,9 +76,24 @@ class VerifyPhoneNumber extends StatelessWidget {
                   backgroundColor: const Color(0xFFF2C94C),
                   shape: const StadiumBorder(),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   // Get.toNamed('/user_registration_one');
-                  verifyCode(verifyPhoneNumberControllers.otpController.value);
+                  CircularProgressIndicator();
+                  await verifyCode(
+                      verifyPhoneNumberControllers.otpController.value);
+                  setState(() {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => Padding(
+                        padding: EdgeInsets.all(16.0.sp),
+                        child: Text(
+                          codeMessage,
+                          style: CustomTextStyle().largeText,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    );
+                  });
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(
