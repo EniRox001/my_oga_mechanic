@@ -5,11 +5,7 @@ FirebaseAuth auth = FirebaseAuth.instance;
 verifyNumber(String number) async {
   auth.verifyPhoneNumber(
     phoneNumber: number,
-    verificationCompleted: (PhoneAuthCredential credential) {
-      FirebaseAuth.instance
-          .signInWithCredential(credential)
-          .then((value) => print('number successfully verified'));
-    },
+    verificationCompleted: (PhoneAuthCredential credential) {},
     verificationFailed: (FirebaseAuthException e) {
       print(e.message);
     },
@@ -22,9 +18,13 @@ verifyNumber(String number) async {
 }
 
 verifyCode(String code) async {
-  PhoneAuthCredential credential = PhoneAuthProvider.credential(
-      verificationId: verficationIdRecieved, smsCode: code);
-  await auth.signInWithCredential(credential).then((value) {
-    print('you are logged in successfully');
-  });
+  try {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verficationIdRecieved, smsCode: code);
+    await auth.signInWithCredential(credential).then((value) {
+      return 'Successfully logged in';
+    });
+  } catch (e) {
+    print(e);
+  }
 }

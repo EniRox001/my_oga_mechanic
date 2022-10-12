@@ -1,3 +1,4 @@
+import 'package:my_oga_mechanic/cloud%20functions/firebase_auth.dart';
 import 'package:my_oga_mechanic/imports.dart';
 
 class VerifyPhoneNumber extends StatelessWidget {
@@ -71,7 +72,8 @@ class VerifyPhoneNumber extends StatelessWidget {
                   shape: const StadiumBorder(),
                 ),
                 onPressed: () {
-                  Get.toNamed('/user_registration_one');
+                  // Get.toNamed('/user_registration_one');
+                  verifyCode(verifyPhoneNumberControllers.otpController.value);
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(

@@ -2,11 +2,12 @@ import 'package:my_oga_mechanic/cloud%20functions/firebase_auth.dart';
 import 'package:my_oga_mechanic/imports.dart';
 
 var verficationIdRecieved = '';
+var verifyResponse = '';
 
 trimNumber(String number) {
   var num = number.substring(1);
   var intCode = '+234';
-  var fullNum = num + intCode;
+  var fullNum = intCode + num;
   return fullNum;
 }
 
@@ -78,6 +79,7 @@ class LoginSignUp extends StatelessWidget {
                       phoneNumberController.phoneNumberController.value,
                     ),
                   );
+                  Get.toNamed('/verify_phone_number');
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(
