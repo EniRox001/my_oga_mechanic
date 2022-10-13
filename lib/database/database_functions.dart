@@ -112,7 +112,7 @@ createUser() async {
   );
 }
 
-createCar() async {
+Future createCar() async {
   await carsCollection.insert(
     Car(
       userUniqueId,

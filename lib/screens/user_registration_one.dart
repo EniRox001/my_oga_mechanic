@@ -140,6 +140,10 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                 ),
                 WTextButton(
                   onPressed: () {
+                    phoneNumberController.phoneNumberController.value =
+                        trimNumber(
+                            phoneNumberController.phoneNumberController.value);
+                    print(phoneNumberController.phoneNumberController.value);
                     Get.toNamed('/user_registration_two');
                   },
                   text: UserRegistrationOneText().nextButtonText.toUpperCase(),

@@ -219,9 +219,6 @@ class VehicleRegistrationOne extends StatelessWidget {
                         },
                       ),
                     )),
-                SizedBox(
-                  height: 150.0.h,
-                ),
                 WTextButton(
                   onPressed: () {
                     Get.toNamed('/vehicle_registration_two');

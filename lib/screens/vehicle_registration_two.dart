@@ -119,8 +119,12 @@ class VehicleRegistrationTwo extends StatelessWidget {
                     );
                     await createUser();
                     await createCar();
-                    Navigator.of(context, rootNavigator: true).pop('dialog');
-                    Get.toNamed('/dashboard_two');
+                    await checkUser(
+                        phoneNumberController.phoneNumberController.value);
+                    // Navigator.of(context, rootNavigator: true).pop('dialog');
+                    Future.delayed(Duration(seconds: 10), () {
+                      Get.toNamed('/dashboard_two');
+                    });
                   },
                   text: VehicleRegistrationTwoText().nextButtonText,
                 ),
