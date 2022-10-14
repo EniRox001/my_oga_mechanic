@@ -23,6 +23,14 @@ connectDB() async {
   userCollection = userDatabase;
   carsCollection = carsDatabase;
   mechanicCollection = mechanicDatabase;
+
+  mechanicDatabase.updateOne(
+    selectedMechanic,
+    modify.set(
+      'cars in cue',
+      selectedMechanic['cars in cue'] + 1,
+    ),
+  );
 }
 
 getMechanics(String model, String workPart) async {
@@ -140,5 +148,29 @@ Future createCar() async {
           .trim()
           .toLowerCase(),
     ).toMap(),
+  );
+}
+
+addMechanicCarCue() {
+  try {
+    mechanicCollection.update(
+      selectedMechanic,
+      modify.set(
+        'cars in cue',
+        selectedMechanic['cars in cue'] + 1,
+      ),
+    );
+  } on Exception catch (e) {
+    print(e);
+  }
+}
+
+removeMechanicCarCue() {
+  mechanicCollection.update(
+    selectedMechanic,
+    modify.set(
+      'cars in cue',
+      selectedMechanic['cars in cue'] - 1,
+    ),
   );
 }

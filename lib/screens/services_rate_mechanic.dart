@@ -33,9 +33,8 @@ class ServicesRateMechanic extends StatelessWidget {
                 radius: 85.0.sp,
                 backgroundColor: Colors.teal,
                 child: CircleAvatar(
-                  backgroundImage: const AssetImage(
-                    'assets/images/mechanic_pic.jpg',
-                  ),
+                  backgroundImage:
+                      NetworkImage(selectedMechanic['profile picture']),
                   radius: 83.0.sp,
                 ),
               ),
@@ -77,6 +76,7 @@ class ServicesRateMechanic extends StatelessWidget {
                         rateMechanicControllers
                             .onCommunicationControllerChanged(value);
                       },
+                      validator: (value) {},
                     ),
                     WRateMechanicWidget(
                       title: 'Knowledge of Issue',
@@ -84,12 +84,14 @@ class ServicesRateMechanic extends StatelessWidget {
                         rateMechanicControllers
                             .onKnowledgeOfIssueControllerChanged(value);
                       },
+                      validator: (value) {},
                     ),
                     WRateMechanicWidget(
                       title: 'Pricing',
                       onChanged: (value) {
                         rateMechanicControllers.onPricingChanged(value);
                       },
+                      validator: (value) {},
                     ),
                     SizedBox(
                       height: 10.0.h,

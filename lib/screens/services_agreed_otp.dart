@@ -35,7 +35,7 @@ class ServicesAgreedOtp extends StatelessWidget {
                 const WCarDetailsWidget(),
                 const WSelectedCarWidget(),
                 Text(
-                  'Please, enter aceptance code sent to: 08022334455',
+                  'Please, enter aceptance code sent to: ${selectedMechanic['phone']}',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 PinCodeTextField(
@@ -50,8 +50,21 @@ class ServicesAgreedOtp extends StatelessWidget {
                   height: 150.0.h,
                 ),
                 WTextButton(
-                  onPressed: () {
-                    Get.toNamed('/services_repair_completed');
+                  onPressed: () async {
+                    validateMechanicPriceOtp(int.parse(
+                        paymentAcceptanceOtp.paymentAcceptanceOtp.value));
+                    await addMechanicCarCue();
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => Padding(
+                        padding: EdgeInsets.all(16.0.sp),
+                        child: Text(
+                          agreedOtpPriceMessage,
+                          style: CustomTextStyle().largeText,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    );
                   },
                   text: 'Submit',
                 ),

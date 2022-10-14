@@ -323,10 +323,12 @@ class WRateMechanicWidget extends StatelessWidget {
     Key? key,
     required this.title,
     required this.onChanged,
+    required this.validator,
   }) : super(key: key);
 
   final String title;
   final Function(String value) onChanged;
+  final String? Function(String? value) validator;
 
   @override
   Widget build(BuildContext context) {
@@ -347,7 +349,7 @@ class WRateMechanicWidget extends StatelessWidget {
               hintText: '',
               onChanged: onChanged,
               keyboardType: TextInputType.number,
-              validator: (value) {},
+              validator: validator,
             ),
           ),
         ],

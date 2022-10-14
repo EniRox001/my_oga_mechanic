@@ -49,7 +49,11 @@ class ServicesAgreeAmount extends StatelessWidget {
                   },
                   keyboardType: TextInputType.number,
                   validator: (value) {
-                    return null;
+                    if (GetUtils.isLengthLessThan(value, 4)) {
+                      return 'This amount is too small';
+                    } else {
+                      return null;
+                    }
                   },
                 ),
                 Obx(
@@ -74,7 +78,9 @@ class ServicesAgreeAmount extends StatelessWidget {
                   height: 100.0.h,
                 ),
                 WTextButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    await generatePriceOtp();
+
                     Get.toNamed('/services_agreed_otp');
                   },
                   text: 'Next',
