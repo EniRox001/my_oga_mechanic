@@ -69,6 +69,9 @@ class _DriversLicenseRegistrationState
                               .onDriversLicenseControllerChanged(value);
                         },
                         keyboardType: TextInputType.text,
+                        validator: (value) {
+                          return null;
+                        },
                       ),
                       SizedBox(
                         height: 100.0.h,

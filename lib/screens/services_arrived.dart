@@ -35,7 +35,7 @@ class ServicesArrived extends StatelessWidget {
                   style: CustomTextStyle().largeText,
                 ),
                 Text(
-                  'Please, enter the machant  code sent to: 08022334455',
+                  'Please, enter the machant  code sent to: ${selectedMechanic['phone'].toString()}',
                   style: Theme.of(context).textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
@@ -48,8 +48,20 @@ class ServicesArrived extends StatelessWidget {
                   keyboardType: TextInputType.number,
                 ),
                 WTextButton(
-                  onPressed: () {
-                    Get.toNamed('/services_repair_nature');
+                  onPressed: () async {
+                    await validateMechanicOtp(
+                        int.parse(otpArrivedController.otpArrived.value));
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => Padding(
+                        padding: EdgeInsets.all(16.0.sp),
+                        child: Text(
+                          otpArrivedMessage,
+                          style: CustomTextStyle().largeText,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    );
                   },
                   text: 'next'.toUpperCase(),
                 )

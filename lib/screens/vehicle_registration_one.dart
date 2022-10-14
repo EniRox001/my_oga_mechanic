@@ -133,6 +133,9 @@ class VehicleRegistrationOne extends StatelessWidget {
                         .onMakeControllerChange(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 WRegistrationFieldTextField(
                   hintText: VehicleRegistrationOneText()
@@ -142,6 +145,9 @@ class VehicleRegistrationOne extends StatelessWidget {
                         .onModelControllerChange(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 GestureDetector(
                   onTap: () {
@@ -182,6 +188,9 @@ class VehicleRegistrationOne extends StatelessWidget {
                         .onBodyBuildControllerChange(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 WRegistrationFieldTextField(
                   hintText: VehicleRegistrationOneText()
@@ -191,6 +200,9 @@ class VehicleRegistrationOne extends StatelessWidget {
                         .onPlateNumberControllerChange(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 Container(
                     padding: EdgeInsets.symmetric(

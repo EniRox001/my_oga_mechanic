@@ -43,6 +43,9 @@ class UserRegistrationTwo extends StatelessWidget {
                     userRegistrationTwoControllers.onFirstNameChanged(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationTwoText()
@@ -52,6 +55,9 @@ class UserRegistrationTwo extends StatelessWidget {
                     userRegistrationTwoControllers.onLastNameChanged(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 Text(
                   UserRegistrationTwoText()

@@ -92,7 +92,7 @@ class ServicesOne extends StatelessWidget {
                         'body work (panel beater)');
                   },
                   icon: Icons.local_shipping,
-                  text: 'body work/panel beater',
+                  text: 'body work',
                 ),
                 WDashboardButton(
                   onPressed: () async {

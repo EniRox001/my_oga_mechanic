@@ -125,12 +125,14 @@ class ServiceMechanic extends StatelessWidget {
                 text: 'Call to confirm',
               ),
               WDashboardButton(
-                onPressed: () {
+                onPressed: () async {
                   //TODO: Google Maps to location
+                  await generateOtp();
                   Get.toNamed('services_arrived');
+                  // sendMessage();
                 },
-                icon: Icons.location_on,
-                text: 'Drive to Location',
+                icon: Icons.flag,
+                text: 'Arrived at Location',
               ),
             ],
           ),

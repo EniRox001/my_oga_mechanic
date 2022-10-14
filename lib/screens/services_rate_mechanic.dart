@@ -100,6 +100,9 @@ class ServicesRateMechanic extends StatelessWidget {
                         rateMechanicControllers.onMechanicReviewChanged(value);
                       },
                       keyboardType: TextInputType.text,
+                      validator: (value) {
+                        return null;
+                      },
                     ),
                     SizedBox(
                       height: 100.0.h,

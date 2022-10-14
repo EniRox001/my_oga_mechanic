@@ -115,6 +115,9 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                     userRegistrationOneControllers.onEmailAddressChanged(value);
                   },
                   keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
@@ -124,6 +127,9 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                     userRegistrationOneControllers.onHomeAddressChanged(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
@@ -134,6 +140,9 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                         .onOfficeAddressChanged(value);
                   },
                   keyboardType: TextInputType.text,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 SizedBox(
                   height: 200.0.h,

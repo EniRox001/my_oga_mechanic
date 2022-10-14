@@ -33,14 +33,14 @@ class ServicesAgreeAmount extends StatelessWidget {
                 ),
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
-                Image.asset(
-                  'assets/car_images/car_img_one.png',
-                  height: Get.height / 4,
-                  fit: BoxFit.contain,
-                ),
+                const WSelectedCarWidget(),
                 Text(
                   'Please, enter the repair cost agreed upon',
                   style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Text(
+                  'Note: this amount will be charged at the end of the repair',
+                  style: Theme.of(context).textTheme.labelMedium,
                 ),
                 WRegistrationFieldTextField(
                   hintText: 'Amount',
@@ -48,6 +48,9 @@ class ServicesAgreeAmount extends StatelessWidget {
                     agreedPriceController.onAgreedPriceChange(value);
                   },
                   keyboardType: TextInputType.number,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 Obx(
                   () => Row(

@@ -33,16 +33,7 @@ class DashboardTwo extends StatelessWidget {
                 ),
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
-                Expanded(
-                  child: Swiper(
-                    itemCount: carImageList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Image.asset(
-                        carImageList[index],
-                      );
-                    },
-                  ),
-                ),
+                WSelectedCarWidget(),
                 Column(
                   children: [
                     Row(
@@ -73,7 +64,7 @@ class DashboardTwo extends StatelessWidget {
                             child: Text(
                               //TODO: Add next service data document data here
                               'Nov 30, 2022',
-                              style: Theme.of(context).textTheme.headline5,
+                              style: Theme.of(context).textTheme.titleLarge,
                             ),
                           ),
                         ),
@@ -89,7 +80,7 @@ class DashboardTwo extends StatelessWidget {
                             child: Text(
                               //TODO: Add document expiring data document data here
                               'Nov 30, 2022',
-                              style: Theme.of(context).textTheme.headline5,
+                              style: Theme.of(context).textTheme.titleLarge,
                             ),
                           ),
                         ),

@@ -50,6 +50,9 @@ class MenuEditUserProfile extends StatelessWidget {
                       },
                       keyboardType: TextInputType.name,
                       label: 'First Name',
+                      validator: (value) {
+                        return null;
+                      },
                     ),
                     WRegistrationFieldTextField(
                       hintText: userRegistrationTwoControllers
@@ -60,6 +63,9 @@ class MenuEditUserProfile extends StatelessWidget {
                       },
                       keyboardType: TextInputType.name,
                       label: 'Last Name',
+                      validator: (value) {
+                        return null;
+                      },
                     ),
                     WRegistrationFieldTextField(
                       hintText: userRegistrationOneControllers
@@ -70,6 +76,9 @@ class MenuEditUserProfile extends StatelessWidget {
                       },
                       keyboardType: TextInputType.name,
                       label: 'Email Address',
+                      validator: (value) {
+                        return null;
+                      },
                     ),
                     WRegistrationFieldTextField(
                       hintText: userRegistrationOneControllers
@@ -80,6 +89,9 @@ class MenuEditUserProfile extends StatelessWidget {
                       },
                       keyboardType: TextInputType.name,
                       label: 'Home Address',
+                      validator: (value) {
+                        return null;
+                      },
                     ),
                     WRegistrationFieldTextField(
                       hintText: userRegistrationOneControllers
@@ -90,6 +102,9 @@ class MenuEditUserProfile extends StatelessWidget {
                       },
                       keyboardType: TextInputType.name,
                       label: 'Office Address',
+                      validator: (value) {
+                        return null;
+                      },
                     ),
                   ],
                 ),

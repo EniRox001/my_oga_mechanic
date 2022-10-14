@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  africas_talking:
+    dependency: "direct main"
+    description:
+      name: africas_talking
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   appwrite:
     dependency: "direct main"
     description:
@@ -356,6 +363,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.5"
+  flutter_termii:
+    dependency: "direct main"
+    description:
+      name: flutter_termii
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -744,6 +758,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
+  random_string:
+    dependency: "direct main"
+    description:
+      name: random_string
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.1"
   rational:
     dependency: transitive
     description:

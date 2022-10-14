@@ -57,6 +57,10 @@ export 'package:cached_network_image/cached_network_image.dart';
 export 'package:dio/dio.dart' hide FormData, Response, MultipartFile;
 export 'package:color_converter/color_converter.dart';
 export 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+export 'package:africas_talking/africas_talking.dart';
+export 'package:random_string/random_string.dart';
+export 'dart:math' show Random;
+
 //---------------Misc---------------//
 export 'routes/routes.dart';
 export 'package:my_oga_mechanic/utilities/constants.dart';
@@ -70,6 +74,7 @@ export 'database/database_functions.dart';
 export 'cloud functions/cloudinary_functions.dart';
 export 'cloud functions/verify_license.dart';
 export 'package:firebase_auth/firebase_auth.dart' hide User;
+export 'cloud functions/otp_functions.dart';
 
 //---------------Models---------------//
 export 'models/user_model.dart';

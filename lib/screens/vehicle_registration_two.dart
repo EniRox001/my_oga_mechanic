@@ -85,6 +85,9 @@ class VehicleRegistrationTwo extends StatelessWidget {
                         .onRoadWorthinessControllerChanged(value);
                   },
                   keyboardType: TextInputType.datetime,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 WRegistrationFieldTextField(
                   hintText: VehicleRegistrationTwoText()
@@ -94,6 +97,9 @@ class VehicleRegistrationTwo extends StatelessWidget {
                         .onVehicleLicenseController(value);
                   },
                   keyboardType: TextInputType.datetime,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 WRegistrationFieldTextField(
                   hintText: VehicleRegistrationTwoText()
@@ -103,6 +109,9 @@ class VehicleRegistrationTwo extends StatelessWidget {
                         .onInsuranceLicenseControllerChanged(value);
                   },
                   keyboardType: TextInputType.datetime,
+                  validator: (value) {
+                    return null;
+                  },
                 ),
                 SizedBox(
                   height: 150.0.h,

@@ -46,6 +46,7 @@ class WRegistrationFieldTextField extends StatelessWidget {
     required this.keyboardType,
     this.inputFormatter = const [],
     this.label = '',
+    required this.validator,
   }) : super(key: key);
 
   final String hintText;
@@ -53,10 +54,13 @@ class WRegistrationFieldTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final List<TextInputFormatter> inputFormatter;
   final String label;
+  final String? Function(String? value) validator;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: validator,
       keyboardType: keyboardType,
       onChanged: onChanged,
       inputFormatters: inputFormatter,
@@ -343,6 +347,7 @@ class WRateMechanicWidget extends StatelessWidget {
               hintText: '',
               onChanged: onChanged,
               keyboardType: TextInputType.number,
+              validator: (value) {},
             ),
           ),
         ],
