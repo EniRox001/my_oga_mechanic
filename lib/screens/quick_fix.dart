@@ -34,27 +34,45 @@ class QuickFix extends StatelessWidget {
                 ),
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
+                Text(
+                  'A mechanic is on his way',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
                 const WSelectedCarWidget(),
+
                 Text(
                   'please wait',
                   style: Theme.of(context).textTheme.headline4,
                 ),
+
                 Text(
                   'You are number',
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 Text(
-                  '11',
+                  selectedMechanic['cars in cue'].toString(),
                   style: CustomTextStyle().largeText,
                 ),
-                TimerCountdown(
-                  format: CountDownTimerFormat.minutesSeconds,
-                  endTime: DateTime.now().add(
-                    const Duration(
-                      minutes: 1,
-                    ),
-                  ),
-                  onEnd: () {},
+                // TimerCountdown(
+                //   format: CountDownTimerFormat.minutesSeconds,
+                //   endTime: DateTime.now().add(
+                //     const Duration(
+                //       minutes: 1,
+                //     ),
+                //   ),
+                //   onEnd: () {},
+                // ),
+                WTextButton(
+                  onPressed: () {
+                    callNumber(selectedMechanic['phone'].toString());
+                  },
+                  text: 'call mechanic',
+                ),
+                WTextButton(
+                  onPressed: () {
+                    Get.toNamed('/dashboard_two');
+                  },
+                  text: 'done',
                 ),
               ],
             ),

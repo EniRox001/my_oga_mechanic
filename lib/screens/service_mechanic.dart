@@ -2,8 +2,7 @@ import 'package:my_oga_mechanic/imports.dart';
 
 final mechanicAreaOfSpecializion = selectedMechanic['areas of specialization'];
 
-callNumber() async {
-  final number = selectedMechanic['phone'].toString();
+callNumber(number) async {
   bool? res = await FlutterPhoneDirectCaller.callNumber(number);
 }
 
@@ -119,7 +118,7 @@ class ServiceMechanic extends StatelessWidget {
                   text: selectedMechanic['pricing'].toString()),
               WDashboardButton(
                 onPressed: () {
-                  callNumber();
+                  callNumber(selectedMechanic['phone'].toString());
                 },
                 icon: Icons.phone,
                 text: 'Call to confirm',

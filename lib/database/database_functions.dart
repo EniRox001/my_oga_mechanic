@@ -12,6 +12,8 @@ var cars;
 var mechanics;
 var selectedMechanic;
 
+var quickFixMessage = '';
+
 connectDB() async {
   var db = await Db.create(
       "mongodb+srv://enirox:Pwafukadi@cluster0.4iczrsa.mongodb.net/?retryWrites=true&w=majority");
@@ -23,14 +25,6 @@ connectDB() async {
   userCollection = userDatabase;
   carsCollection = carsDatabase;
   mechanicCollection = mechanicDatabase;
-
-  mechanicDatabase.updateOne(
-    selectedMechanic,
-    modify.set(
-      'cars in cue',
-      selectedMechanic['cars in cue'] + 1,
-    ),
-  );
 }
 
 getMechanics(String model, String workPart) async {
@@ -47,6 +41,107 @@ getMechanics(String model, String workPart) async {
           mechanics = value;
           print(mechanics.length);
           Get.toNamed('service_request');
+        },
+      );
+}
+
+acceptUserRequest(context, value) async {
+  Future.delayed(
+    Duration(seconds: 4),
+    () {
+      selectedMechanic = value;
+      Navigator.pop(context);
+      Get.toNamed('/quick_fix');
+    },
+  );
+}
+
+declineUserRequest(context) async {
+  Future.delayed(
+    Duration(seconds: 4),
+    () {
+      Navigator.pop(context);
+      Navigator.pop(context);
+      Navigator.pop(context);
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(
+              'Mechanic has declined request',
+              style: CustomTextStyle().largeText,
+              textAlign: TextAlign.center,
+            ),
+          );
+        },
+      );
+    },
+  );
+}
+
+requestMechanicQuickFix(model, workPart, context) async {
+  mechanicCollection
+      .find(
+        {
+          'vehicle brand': model,
+          'areas of specialization': workPart,
+        },
+      )
+      .toList()
+      .then(
+        (value) {
+          if (value.length > 0) {
+            return showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text(
+                      'Mechanic Found',
+                      style: CustomTextStyle().largeText,
+                      textAlign: TextAlign.center,
+                    ),
+                    content: WTextButton(
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const SizedBox(
+                              child: Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                            );
+                          },
+                        );
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) => Padding(
+                            padding: EdgeInsets.all(16.0.sp),
+                            child: Text(
+                              'Mechanic requested. \nPlease hold on...',
+                              style: CustomTextStyle().largeText,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        );
+                        acceptUserRequest(context, value[0]);
+                      },
+                      text: 'Send Request?',
+                    ),
+                  );
+                });
+          } else {
+            return showModalBottomSheet(
+              context: context,
+              builder: (context) => Padding(
+                padding: EdgeInsets.all(16.0.sp),
+                child: Text(
+                  'No nearby mechanic found',
+                  style: CustomTextStyle().largeText,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            );
+          }
         },
       );
 }
