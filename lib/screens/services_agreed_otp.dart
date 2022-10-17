@@ -53,7 +53,6 @@ class ServicesAgreedOtp extends StatelessWidget {
                   onPressed: () async {
                     validateMechanicPriceOtp(int.parse(
                         paymentAcceptanceOtp.paymentAcceptanceOtp.value));
-                    await addMechanicCarCue();
                     showModalBottomSheet(
                       context: context,
                       builder: (context) => Padding(

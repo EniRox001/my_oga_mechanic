@@ -43,7 +43,7 @@ class ServicesRepairCompleted extends StatelessWidget {
                 WTextButton(
                   onPressed: () async {
                     await removeMechanicCarCue();
-                    Get.toNamed('/services_rate_mechanic');
+                    // Get.toNamed('/services_rate_mechanic');
                   },
                   text: 'repair completed',
                 ),

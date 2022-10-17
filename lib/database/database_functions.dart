@@ -256,16 +256,20 @@ addMechanicCarCue() {
       ),
     );
   } on Exception catch (e) {
-    print(e);
+    return e;
   }
 }
 
 removeMechanicCarCue() {
-  mechanicCollection.update(
-    selectedMechanic,
-    modify.set(
-      'cars in cue',
-      selectedMechanic['cars in cue'] - 1,
-    ),
-  );
+  try {
+    mechanicCollection.update(
+        selectedMechanic,
+        modify.set(
+          'cars in cue',
+          selectedMechanic['cars in cue'] - 1,
+        ),
+        multiUpdate: true);
+  } on Exception catch (e) {
+    return e;
+  }
 }

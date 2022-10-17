@@ -18,11 +18,12 @@ generatePriceOtp() {
   mechanicAgreedPriceOtpMain = int.parse(mechanicPriceOtp);
 }
 
-validateMechanicPriceOtp(int otp) {
+validateMechanicPriceOtp(int otp) async {
   print(otp);
   if (otp == mechanicAgreedPriceOtpMain) {
     print('correct OTP was provided');
     agreedOtpPriceMessage = 'Correct OTP provided';
+    await addMechanicCarCue();
     Get.toNamed('/services_repair_completed');
   } else {
     agreedOtpPriceMessage = 'Please enter the correct OTP';
