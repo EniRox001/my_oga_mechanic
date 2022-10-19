@@ -1,8 +1,14 @@
+import 'package:my_oga_mechanic/cloud%20functions/age_calculator.dart';
 import 'package:my_oga_mechanic/imports.dart';
 
-class UserRegistrationTwo extends StatelessWidget {
+class UserRegistrationTwo extends StatefulWidget {
   const UserRegistrationTwo({super.key});
 
+  @override
+  State<UserRegistrationTwo> createState() => _UserRegistrationTwoState();
+}
+
+class _UserRegistrationTwoState extends State<UserRegistrationTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +50,9 @@ class UserRegistrationTwo extends StatelessWidget {
                   },
                   keyboardType: TextInputType.text,
                   validator: (value) {
-                    return null;
+                    if (GetUtils.isLengthLessThan(value, 2)) {
+                      return 'Enter a valid first name';
+                    }
                   },
                 ),
                 WRegistrationFieldTextField(
@@ -56,7 +64,9 @@ class UserRegistrationTwo extends StatelessWidget {
                   },
                   keyboardType: TextInputType.text,
                   validator: (value) {
-                    return null;
+                    if (GetUtils.isLengthLessThan(value, 2)) {
+                      return 'Enter a valid last name';
+                    }
                   },
                 ),
                 Text(
@@ -116,7 +126,7 @@ class UserRegistrationTwo extends StatelessWidget {
                       )
                     : WTextButton(
                         onPressed: () {
-                          Get.toNamed('/driver_license_registration');
+                          // Get.toNamed('/driver_license_registration');
                         },
                         text: UserRegistrationTwoText()
                             .nextButtonText

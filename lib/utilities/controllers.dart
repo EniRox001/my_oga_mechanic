@@ -46,6 +46,10 @@ class UserRegistrationOneControllers {
   }
 }
 
+int year = 0;
+int month = 0;
+int day = 0;
+
 class UserRegistrationTwoControllers extends GetxController {
   var firstNameController = ''.obs;
   onFirstNameChanged(String value) {
@@ -60,14 +64,20 @@ class UserRegistrationTwoControllers extends GetxController {
   var dateOfBirthController =
       UserRegistrationTwoText().dateOfBirthControllerHintText.toUpperCase().obs;
 
-  Future<void> onDateOfBirthChanged(BuildContext context) async {
+  Future onDateOfBirthChanged(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1900, 8),
-        lastDate: DateTime(2101));
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900, 8),
+      lastDate: DateTime(2101),
+    );
     if (picked != null && picked != DateTime.now()) {
       dateOfBirthController.value = picked.toString();
+      year = int.parse(dateOfBirthController.value.substring(0, 4));
+      month = int.parse(dateOfBirthController.value.substring(5, 7));
+      day = int.parse(dateOfBirthController.value.substring(8, 10));
+
+      calculateAge();
     }
   }
 }

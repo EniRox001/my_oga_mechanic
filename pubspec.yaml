@@ -63,6 +63,7 @@ dependencies:
   africas_talking: ^0.0.1
   random_string: ^2.3.1
   flutter_termii: ^0.2.1
+  age_calculator: ^1.0.0
 
 dev_dependencies:
   flutter_test:

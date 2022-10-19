@@ -410,3 +410,35 @@ class WCarDetailsSmallWidget extends StatelessWidget {
     );
   }
 }
+
+class WPhoneNumberFieldWidget extends StatelessWidget {
+  const WPhoneNumberFieldWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: teal,
+          width: 3.0.w,
+        ),
+        borderRadius: BorderRadius.circular(15.0.sp),
+        color: Colors.black87,
+      ),
+      child: Row(
+        children: [
+          Padding(
+            padding:
+                EdgeInsets.symmetric(vertical: 24.0.sp, horizontal: 16.0.sp),
+            child: Text(
+              trimNumber(phoneNumberController.phoneNumberController.value),
+              style: TextStyle(color: Colors.white70, fontSize: 22.0.sp),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}

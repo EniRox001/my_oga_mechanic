@@ -60,6 +60,7 @@ export 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 export 'package:random_string/random_string.dart';
 export 'dart:math' show Random;
 export 'package:flutter_termii/flutter_termii.dart';
+export 'package:age_calculator/age_calculator.dart';
 
 //---------------Misc---------------//
 export 'routes/routes.dart';
@@ -74,6 +75,7 @@ export 'database/database_functions.dart';
 export 'cloud functions/cloudinary_functions.dart';
 export 'cloud functions/verify_license.dart';
 export 'cloud functions/otp_functions.dart';
+export 'cloud functions/age_calculator.dart';
 
 //---------------Models---------------//
 export 'models/user_model.dart';

@@ -2,6 +2,22 @@ import 'package:my_oga_mechanic/imports.dart';
 
 final cloudinary = CloudinaryPublic('myogamechanic', 'kf3reywm', cache: false);
 
+setNullProfilePicture() async {
+  try {
+    CloudinaryResponse response =
+        await cloudinary.uploadFile(CloudinaryFile.fromUrl(
+      "https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png",
+      folder: 'userProfilePicture',
+      resourceType: CloudinaryResourceType.Image,
+    ));
+    print(response.secureUrl);
+    profilePictureUrl = response.secureUrl;
+  } on CloudinaryException catch (e) {
+    print(e.message);
+    print(e.request);
+  }
+}
+
 setProfilePicture() async {
   final XFile? image = await profilePicturePicker.pickImage(
     source: ImageSource.gallery,
