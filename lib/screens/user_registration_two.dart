@@ -101,12 +101,27 @@ class UserRegistrationTwo extends StatelessWidget {
                     ),
                   ),
                 ),
-                WTextButton(
-                  onPressed: () {
-                    Get.toNamed('/driver_license_registration');
-                  },
-                  text: UserRegistrationTwoText().nextButtonText.toUpperCase(),
-                )
+                guestRegistration
+                    ? WTextButton(
+                        onPressed: () async {
+                          await createUser();
+                          Future.delayed(Duration(seconds: 10), () {
+                            guestRegistration = false;
+                            Get.toNamed('/accident_other_vehicle_image');
+                          });
+                        },
+                        text: UserRegistrationTwoText()
+                            .nextButtonText
+                            .toUpperCase(),
+                      )
+                    : WTextButton(
+                        onPressed: () {
+                          Get.toNamed('/driver_license_registration');
+                        },
+                        text: UserRegistrationTwoText()
+                            .nextButtonText
+                            .toUpperCase(),
+                      )
               ],
             ),
           ),

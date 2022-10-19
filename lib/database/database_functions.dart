@@ -7,10 +7,18 @@ ObjectId userUniqueId = ObjectId();
 var userCollection;
 var carsCollection;
 var mechanicCollection;
+var accidentCollection;
+var towsCollection;
+
 var user;
 var cars;
 var mechanics;
 var selectedMechanic;
+var selectedTowTruck;
+
+bool ambulance = false;
+bool otherAccidentVehicles = false;
+bool towTruckRequest = false;
 
 var quickFixMessage = '';
 
@@ -21,10 +29,14 @@ connectDB() async {
   final userDatabase = db.collection('users');
   final carsDatabase = db.collection('cars');
   final mechanicDatabase = db.collection('mechanics');
+  final accidentDatabase = db.collection('accidents');
+  final towDatabase = db.collection('tows');
 
   userCollection = userDatabase;
   carsCollection = carsDatabase;
   mechanicCollection = mechanicDatabase;
+  accidentCollection = accidentDatabase;
+  towsCollection = towDatabase;
 }
 
 getMechanics(String model, String workPart) async {
@@ -184,6 +196,19 @@ getUserCars() {
       );
 }
 
+createAccident() async {
+  await accidentCollection.insert(
+    Accident(
+      userUniqueId,
+      ambulance,
+      accidentImageList,
+      otherAccidentVehicles,
+      accidentOtherImageList,
+      towTruckRequest,
+    ).toMap(),
+  );
+}
+
 createUser() async {
   await userCollection.insert(
     User(
@@ -215,7 +240,7 @@ createUser() async {
   );
 }
 
-Future createCar() async {
+createCar() async {
   await carsCollection.insert(
     Car(
       userUniqueId,
@@ -243,6 +268,15 @@ Future createCar() async {
           .trim()
           .toLowerCase(),
     ).toMap(),
+  );
+}
+
+requestTowTruck() async {
+  towsCollection.find().toList().then(
+    (value) {
+      selectedTowTruck = value[0];
+      print(selectedTowTruck);
+    },
   );
 }
 

@@ -48,6 +48,7 @@ class AccidentServiceSelection extends StatelessWidget {
                 ),
                 WTextButton(
                   onPressed: () {
+                    ambulance = false;
                     Get.toNamed('/accident_image_capture');
                   },
                   text: 'vehicle repair',

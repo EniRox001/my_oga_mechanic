@@ -1,7 +1,7 @@
 import 'package:my_oga_mechanic/imports.dart';
 
 final ImagePicker profilePicturePicker = ImagePicker();
-final cloudinary = CloudinaryPublic('myogamechanic', 'kf3reywm', cache: false);
+bool guestRegistration = false;
 
 class UserRegistrationOne extends StatefulWidget {
   const UserRegistrationOne({super.key});
@@ -83,30 +83,16 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
                           ),
                         ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: teal,
-                      width: 3.0.w,
-                    ),
-                    borderRadius: BorderRadius.circular(15.0.sp),
-                    color: Colors.black87,
-                  ),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 24.0.sp, horizontal: 16.0.sp),
-                        child: Text(
-                          trimNumber(phoneNumberController
-                              .phoneNumberController.value),
-                          style: TextStyle(
-                              color: Colors.white70, fontSize: 22.0.sp),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                guestRegistration
+                    ? WRegistrationFieldTextField(
+                        hintText: 'phone number',
+                        onChanged: userRegistrationOneControllers
+                            .phoneNumberController,
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          return null;
+                        })
+                    : const WPhoneNumberFieldWidget(),
                 WRegistrationFieldTextField(
                   hintText: UserRegistrationOneText()
                       .emailAddressControllerHintText
@@ -161,6 +147,38 @@ class _UserRegistrationOneState extends State<UserRegistrationOne> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class WPhoneNumberFieldWidget extends StatelessWidget {
+  const WPhoneNumberFieldWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: teal,
+          width: 3.0.w,
+        ),
+        borderRadius: BorderRadius.circular(15.0.sp),
+        color: Colors.black87,
+      ),
+      child: Row(
+        children: [
+          Padding(
+            padding:
+                EdgeInsets.symmetric(vertical: 24.0.sp, horizontal: 16.0.sp),
+            child: Text(
+              trimNumber(phoneNumberController.phoneNumberController.value),
+              style: TextStyle(color: Colors.white70, fontSize: 22.0.sp),
+            ),
+          )
+        ],
       ),
     );
   }

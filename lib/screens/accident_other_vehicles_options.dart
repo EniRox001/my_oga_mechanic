@@ -40,13 +40,16 @@ class AccidentOtherVehicles extends StatelessWidget {
                 Column(
                   children: [
                     WTextButton(
-                        onPressed: () {
-                          Get.toNamed('/accident_other_vehicles_query');
-                        },
-                        text: 'yes'),
+                      onPressed: () {
+                        Get.toNamed('/accident_other_vehicles_query');
+                      },
+                      text: 'yes',
+                    ),
                     SizedBox(height: 20.0.h),
                     WTextButton(
                         onPressed: () {
+                          otherAccidentVehicles = false;
+                          accidentOtherImageList = [];
                           Get.toNamed('/accident_tow_truck_query');
                         },
                         text: 'no'),

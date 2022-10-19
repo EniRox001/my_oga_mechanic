@@ -1,8 +1,15 @@
 import 'package:my_oga_mechanic/imports.dart';
 
-class AccidentOtherVehicleImageCapture extends StatelessWidget {
+class AccidentOtherVehicleImageCapture extends StatefulWidget {
   const AccidentOtherVehicleImageCapture({super.key});
 
+  @override
+  State<AccidentOtherVehicleImageCapture> createState() =>
+      _AccidentOtherVehicleImageCaptureState();
+}
+
+class _AccidentOtherVehicleImageCaptureState
+    extends State<AccidentOtherVehicleImageCapture> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,26 +45,53 @@ class AccidentOtherVehicleImageCapture extends StatelessWidget {
                 ),
                 const WCarNameWidget(),
                 const WCarDetailsWidget(),
-                const WSelectedCarWidget(),
-                Text(
-                  'Please, take the appropriate images of the affected areas as indicated in the images below',
-                  style: CustomTextStyle().largeText,
-                  textAlign: TextAlign.center,
-                ),
+                containOtherImages
+                    ? Expanded(
+                        child: GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 35.0.h,
+                          ),
+                          itemBuilder: (context, index) => Image.network(
+                            accidentOtherImageList[index],
+                          ),
+                          itemCount: accidentOtherImageList.length,
+                        ),
+                      )
+                    : Text(
+                        'Please, take the appropriate images of the affected areas as indicated in the images below',
+                        style: CustomTextStyle().largeText,
+                        textAlign: TextAlign.center,
+                      ),
                 WTextButton(
                   onPressed: () async {
-                    //TODO: Add images to accidents json file
-
-                    // final XFile? image = await picker.pickImage(
-                    //   source: ImageSource.camera,
-                    // );
-                    // carAcc.add(image);
-                    // print(carAcc.asMap());
-
-                    Get.toNamed('/accident_other_vehicles');
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        });
+                    await addOtherAccidentImages();
+                    setState(() {
+                      containOtherImages = true;
+                      Navigator.pop(context);
+                    });
                   },
                   text: 'Add Photos',
                 ),
+                SizedBox(
+                  height: 10.0.h,
+                ),
+                containOtherImages
+                    ? WTextButton(
+                        onPressed: () {
+                          otherAccidentVehicles = true;
+                          Get.toNamed('/accident_tow_truck_query');
+                        },
+                        text: 'next')
+                    : const SizedBox(),
               ],
             ),
           ),

@@ -47,6 +47,7 @@ class AccidentOtherVehiclesQuery extends StatelessWidget {
                     SizedBox(height: 20.0.h),
                     WTextButton(
                         onPressed: () {
+                          guestRegistration = true;
                           Get.toNamed('/user_registration_one');
                         },
                         text: 'no'),

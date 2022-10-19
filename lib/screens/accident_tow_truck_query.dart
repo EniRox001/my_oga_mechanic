@@ -40,12 +40,34 @@ class AccidentTowTruckQuery extends StatelessWidget {
                 Column(
                   children: [
                     WTextButton(
-                        onPressed: () {
-                          Get.toNamed('/accident_tow_truck');
+                        onPressed: () async {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const Center(
+                                  child: CircularProgressIndicator(),
+                                );
+                              });
+                          towTruckRequest = true;
+                          await requestTowTruck();
+                          // await createAccident();
+                          Future.delayed(
+                            Duration(seconds: 6),
+                            () {
+                              Navigator.pop(context);
+                              Get.toNamed('/accident_tow_truck');
+                            },
+                          );
                         },
                         text: 'yes'),
                     SizedBox(height: 20.0.h),
-                    WTextButton(onPressed: () {}, text: 'no'),
+                    WTextButton(
+                        onPressed: () async {
+                          towTruckRequest = false;
+                          await createAccident();
+                          Get.toNamed('/dashboard_two');
+                        },
+                        text: 'no'),
                   ],
                 ),
               ],

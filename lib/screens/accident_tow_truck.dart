@@ -41,28 +41,47 @@ class AccidentTowTruck extends StatelessWidget {
                   height: Get.height / 5,
                 ),
                 Column(
-                  children: const [
-                    WMechanicData(title: 'Car Make', text: 'ECO BULL TOWING'),
-                    WMechanicData(title: 'Capacity', text: '3 TONS TOWING'),
-                    WMechanicData(title: 'Plate Number', text: 'IKJ232AC'),
-                    WMechanicData(title: 'Owner', text: 'OLALEKAN'),
+                  children: [
+                    WMechanicData(
+                        title: 'Car Make',
+                        text:
+                            selectedTowTruck['make'].toString().toUpperCase()),
+                    WMechanicData(
+                        title: 'Capacity',
+                        text: selectedTowTruck['capacity']
+                            .toString()
+                            .toUpperCase()),
+                    WMechanicData(
+                      title: 'Plate Number',
+                      text: selectedTowTruck['plate number']
+                          .toString()
+                          .toUpperCase(),
+                    ),
+                    WMechanicData(
+                      title: 'Owner',
+                      text: selectedTowTruck['owner'].toString().toUpperCase(),
+                    ),
                   ],
                 ),
                 Text(
-                  'Estimated Wait Time'.toUpperCase(),
+                  'A tow truck is on the way'.toUpperCase(),
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
-                TimerCountdown(
-                  format: CountDownTimerFormat.minutesSeconds,
-                  endTime: DateTime.now().add(
-                    const Duration(
-                      minutes: 1,
-                    ),
-                  ),
-                  onEnd: () {},
-                ),
+                // TimerCountdown(
+                //   format: CountDownTimerFormat.minutesSeconds,
+                //   endTime: DateTime.now().add(
+                //     const Duration(
+                //       minutes: 1,
+                //     ),
+                //   ),
+                //   onEnd: () {},
+                // ),
                 WTextButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    callNumber(
+                      selectedTowTruck['number'],
+                    );
+                  },
                   text: 'Call Driver',
                   color: Colors.red,
                 ),

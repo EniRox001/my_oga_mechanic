@@ -41,12 +41,19 @@ class AccidentAmbulanceSelection extends StatelessWidget {
                 ),
                 WTextButton(
                   onPressed: () {
+                    ambulance = true;
                     Get.toNamed('/accident_ambulance_timer');
                   },
                   text: 'yes',
                   color: Colors.red,
                 ),
-                WTextButton(onPressed: () {}, text: 'no')
+                WTextButton(
+                  onPressed: () {
+                    ambulance = false;
+                    Get.toNamed('accident_image_capture');
+                  },
+                  text: 'no',
+                )
               ],
             ),
           ),
