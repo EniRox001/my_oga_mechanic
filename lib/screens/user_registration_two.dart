@@ -126,7 +126,7 @@ class _UserRegistrationTwoState extends State<UserRegistrationTwo> {
                       )
                     : WTextButton(
                         onPressed: () {
-                          // Get.toNamed('/driver_license_registration');
+                          Get.toNamed('/driver_license_registration');
                         },
                         text: UserRegistrationTwoText()
                             .nextButtonText
