@@ -31,14 +31,14 @@ class MenuScreen extends StatelessWidget {
                   radius: 85.0.sp,
                   backgroundColor: Colors.teal,
                   child: CircleAvatar(
-                    backgroundImage: const AssetImage(
-                      'assets/images/myOgaMechanicLogo.png',
+                    backgroundImage: NetworkImage(
+                      user['profile picture'],
                     ),
                     radius: 83.0.sp,
                   ),
                 ),
                 Text(
-                  'Samuel LongShak',
+                  '${user['first name'].toString().toTitleCase()} ${user['last name'].toString().toTitleCase()}',
                   style: CustomTextStyle().largeText,
                   textAlign: TextAlign.center,
                 ),
@@ -63,7 +63,7 @@ class MenuScreen extends StatelessWidget {
                 ),
                 WTextButton(
                   onPressed: () {},
-                  text: 'apply for driver\'s license',
+                  text: 'apply for license',
                 ),
                 WTextButton(
                   onPressed: () {},

@@ -61,6 +61,8 @@ export 'package:random_string/random_string.dart';
 export 'dart:math' show Random;
 export 'package:flutter_termii/flutter_termii.dart';
 export 'package:age_calculator/age_calculator.dart';
+export 'package:map_launcher/map_launcher.dart';
+export 'package:maps_launcher/maps_launcher.dart';
 
 //---------------Misc---------------//
 export 'routes/routes.dart';
@@ -76,6 +78,7 @@ export 'cloud functions/cloudinary_functions.dart';
 export 'cloud functions/verify_license.dart';
 export 'cloud functions/otp_functions.dart';
 export 'cloud functions/age_calculator.dart';
+export 'cloud functions/map_functions.dart';
 
 //---------------Models---------------//
 export 'models/user_model.dart';

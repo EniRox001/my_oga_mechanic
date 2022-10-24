@@ -307,3 +307,11 @@ removeMechanicCarCue() {
     return e;
   }
 }
+
+checkInputDirty(String controller, userField) {
+  if (controller != '' && controller != userField) {
+    print('dirty');
+  } else {
+    print('clean');
+  }
+}

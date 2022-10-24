@@ -92,28 +92,28 @@ class _LoginSignUpState extends State<LoginSignUp> {
                         );
                       });
 
-                  // await verifyNumber(
-                  //   trimNumber(
-                  //     phoneNumberController.phoneNumberController.value,
-                  //   ),
-                  // );
-                  // Future.delayed(Duration(seconds: 8), () {
-                  //   setState(() {
-                  //     showModalBottomSheet(
-                  //       context: context,
-                  //       builder: (context) => Padding(
-                  //         padding: EdgeInsets.all(16.0.sp),
-                  //         child: Text(
-                  //           verifyResponse,
-                  //           style: CustomTextStyle().largeText,
-                  //           textAlign: TextAlign.center,
-                  //         ),
-                  //       ),
-                  //     );
-                  //   });
-                  // });
-                  await checkUser(trimNumber(
-                      phoneNumberController.phoneNumberController.value));
+                  await verifyNumber(
+                    trimNumber(
+                      phoneNumberController.phoneNumberController.value,
+                    ),
+                  );
+                  Future.delayed(Duration(seconds: 8), () {
+                    setState(() {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => Padding(
+                          padding: EdgeInsets.all(16.0.sp),
+                          child: Text(
+                            verifyResponse,
+                            style: CustomTextStyle().largeText,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      );
+                    });
+                  });
+                  // await checkUser(trimNumber(
+                  //     phoneNumberController.phoneNumberController.value));
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(
